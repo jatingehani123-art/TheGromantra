@@ -1,16 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-
 export const metadata: Metadata = {
-  title: "The Gromantra - Digital Marketing for Startups",
+  title: "GROMANTRA — Digital Signal Architecture",
   description:
-    "Powerful digital marketing solutions designed for ambitious startups. Marketing planner, social media management, brand organization, and analytics in one platform.",
+    "We don't make campaigns. We architect signals. Digital marketing, brand architecture, and growth systems for ambitious brands.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -38,7 +34,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`font-sans antialiased bg-black`} suppressHydrationWarning>
+      <head>
+        {/* Typography: Syne (display), Space Mono (body mono), Playfair Display (accent serif) */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="font-sans antialiased bg-black" suppressHydrationWarning>
+        {/* Global grain overlay */}
+        <div className="grain-overlay" aria-hidden="true" />
+        {/* Global scanline overlay */}
+        <div className="scanline-overlay" aria-hidden="true" />
         {children}
         <Analytics />
       </body>
