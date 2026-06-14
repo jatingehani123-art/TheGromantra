@@ -1,7 +1,34 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
+import { Space_Grotesk, Inter, JetBrains_Mono, Press_Start_2P } from "next/font/google"
+import { ReactLenis } from "@/lib/lenis-provider"
 import "./globals.css"
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+})
+
+const pressStart2P = Press_Start_2P({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-pixel",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "GROMANTRA — Digital Signal Architecture",
@@ -34,22 +61,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <head>
-        {/* Typography: Syne (display), Space Mono (body mono), Playfair Display (accent serif) */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="font-sans antialiased bg-black" suppressHydrationWarning>
-        {/* Global grain overlay */}
-        <div className="grain-overlay" aria-hidden="true" />
-        {/* Global scanline overlay */}
-        <div className="scanline-overlay" aria-hidden="true" />
-        {children}
-        <Analytics />
+      <body
+        className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} ${pressStart2P.variable} font-sans antialiased bg-black`}
+        suppressHydrationWarning
+      >
+        <ReactLenis root>
+          {/* Global grain overlay */}
+          <div className="grain-overlay" aria-hidden="true" />
+          {/* Global scanline overlay */}
+          <div className="scanline-overlay" aria-hidden="true" />
+          {children}
+          <Analytics />
+        </ReactLenis>
       </body>
     </html>
   )

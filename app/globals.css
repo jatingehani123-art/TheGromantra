@@ -10,18 +10,18 @@
 
 :root {
   /* Core palette — PRESERVED */
-  --background: #000000;
+  --background: #0F1115;
   --foreground: #ffffff;
-  --card: #0a0a0a;
+  --card: #171A1F;
   --card-foreground: #ffffff;
-  --popover: #0a0a0a;
+  --popover: #171A1F;
   --popover-foreground: #ffffff;
-  --primary: #1d4ed8;
+  --primary: #1D4ED8;
   --primary-foreground: #ffffff;
-  --secondary: #5ec6ff;
+  --secondary: #5EC6FF;
   --secondary-foreground: #000000;
-  --muted: #343c43;
-  --muted-foreground: #888888;
+  --muted: #343C43;
+  --muted-foreground: rgba(255,255,255,0.7);
   --accent: #1d4ed8;
   --accent-foreground: #5ec6ff;
   --destructive: #ef4444;
@@ -46,8 +46,8 @@
   --gm-border: #343c43;
 
   /* Typography */
-  --font-display: 'Syne', system-ui, sans-serif;
-  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-display: var(--font-display, system-ui, sans-serif);
+  --font-mono: var(--font-mono, monospace);
   --font-serif: 'Playfair Display', Georgia, serif;
 
   /* Motion */
@@ -66,18 +66,18 @@
 }
 
 .dark {
-  --background: #000000;
+  --background: #0F1115;
   --foreground: #ffffff;
-  --card: #0a0a0a;
+  --card: #171A1F;
   --card-foreground: #ffffff;
-  --popover: #0a0a0a;
+  --popover: #171A1F;
   --popover-foreground: #ffffff;
-  --primary: #1d4ed8;
+  --primary: #1D4ED8;
   --primary-foreground: #ffffff;
-  --secondary: #5ec6ff;
+  --secondary: #5EC6FF;
   --secondary-foreground: #000000;
-  --muted: #343c43;
-  --muted-foreground: #888888;
+  --muted: #343C43;
+  --muted-foreground: rgba(255,255,255,0.7);
   --accent: #1d4ed8;
   --accent-foreground: #5ec6ff;
   --destructive: #ef4444;
@@ -101,8 +101,9 @@
 }
 
 @theme inline {
-  --font-sans: 'Syne', 'Syne Fallback', system-ui, sans-serif;
-  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-sans: var(--font-sans, system-ui, sans-serif);
+  --font-display: var(--font-display, system-ui, sans-serif);
+  --font-mono: var(--font-mono, monospace);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -279,6 +280,10 @@
 
   .font-serif-accent {
     font-family: var(--font-serif);
+  }
+
+  .font-pixel {
+    font-family: var(--font-pixel), monospace;
   }
 
   .gradient-primary {
