@@ -65,8 +65,9 @@ export function NeuralNetwork() {
 
   return (
     <section className="py-32 bg-[#050508] relative overflow-hidden min-h-screen flex flex-col items-center">
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay z-0" />
+      {/* Background Grid & Glow */}
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5 mix-blend-overlay -z-10 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#1D4ED8] rounded-full blur-[150px] opacity-10 -z-10 pointer-events-none" />
 
       <div className="text-center relative z-20 max-w-3xl px-4 mb-16 mt-20">
         <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4 uppercase tracking-wide">

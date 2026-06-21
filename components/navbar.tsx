@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Home, Info, Briefcase, Phone } from 'lucide-react'
+import { Home, Info, Briefcase, Phone, FileText } from 'lucide-react'
 import { TubelightNavbar } from "@/components/ui/tubelight-navbar"
 
 export default function Navbar() {
@@ -21,6 +21,7 @@ export default function Navbar() {
     { name: 'Home', url: '/', icon: Home },
     { name: 'About', url: '/about', icon: Info },
     { name: 'Services', url: '/services', icon: Briefcase },
+    { name: 'Blog', url: '/blog', icon: FileText },
     { name: 'Contact', url: '/contact', icon: Phone }
   ]
 

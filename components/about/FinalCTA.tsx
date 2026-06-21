@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 export function FinalCTA() {
   return (
@@ -12,7 +13,7 @@ export function FinalCTA() {
              style={{ transform: "rotateX(75deg)" }}>
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-30" />
           {/* Glowing Light Trail */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-[100%] bg-gradient-to-b from-[#5EC6FF] to-transparent blur-xl glow-cyan animate-pulse" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-[100%] bg-gradient-to-b from-[#5EC6FF] to-transparent blur-xl glow-cyan animate-pulse -z-10 pointer-events-none opacity-40" />
         </div>
       </div>
 
@@ -25,7 +26,7 @@ export function FinalCTA() {
           className="text-5xl md:text-7xl font-display font-bold text-white mb-6 uppercase tracking-tight"
         >
           Ready To Enter <br />
-          <span className="text-transparent bg-clip-text gradient-primary glow-text">The Fast Lane?</span>
+          <span className="inline-block text-transparent bg-clip-text gradient-primary glow-text">The Fast Lane?</span>
         </motion.h2>
         
         <motion.p 
@@ -45,14 +46,14 @@ export function FinalCTA() {
           transition={{ delay: 0.4 }}
           className="relative inline-block group"
         >
-          <button className="relative px-10 py-5 bg-[#171A1F] border border-[#343C43] overflow-hidden transition-all hover:border-[#5EC6FF] cursor-pointer">
+          <Link href="/contact" className="relative px-10 py-5 bg-[#171A1F] border border-[#343C43] overflow-hidden transition-all hover:border-[#5EC6FF] cursor-pointer inline-block">
             {/* Charging Fill Background */}
             <div className="absolute inset-0 bg-[#1D4ED8] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
             
             <span className="relative z-10 font-mono text-white text-lg uppercase tracking-widest group-hover:text-white transition-colors duration-500">
               Launch Your Growth Engine
             </span>
-          </button>
+          </Link>
 
           {/* Pixel Rocket Cameo */}
           <div className="absolute top-1/2 -left-12 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:-translate-y-32 group-hover:translate-x-[500px] transition-all duration-1000 ease-in pointer-events-none z-50">

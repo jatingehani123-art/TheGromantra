@@ -3,117 +3,109 @@
 import Link from "next/link"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import { Target, Megaphone, Sparkles, PenTool, Settings, BarChart } from "lucide-react"
-import { GlowingEffect } from "@/components/ui/glowing-effect"
-import { cn } from "@/lib/utils"
+import { Target, Megaphone, Monitor, BarChart3, Palette, TerminalSquare } from "lucide-react"
 
-const services = [
-  { 
-    id: "digital-marketing-strategy", 
-    name: "Digital Marketing Strategy", 
-    icon: <Target className="h-5 w-5" />,
-    description: "Data-driven roadmaps to maximize your online presence and reach your target audience effectively."
+const SERVICES = [
+  {
+    id: "seo",
+    name: "SEO",
+    icon: Target,
+    desc: "High-intent search architectures that capture demand and compound organically."
   },
-  { 
-    id: "social-media-management", 
-    name: "Social Media Management", 
-    icon: <Megaphone className="h-5 w-5" />,
-    description: "Engage your community and build brand loyalty across all major social platforms."
+  {
+    id: "social-media",
+    name: "Social Media & Content",
+    icon: Megaphone,
+    desc: "Community-driven content and social frameworks that engage and convert."
   },
-  { 
-    id: "branding-identity", 
-    name: "Branding & Identity", 
-    icon: <Sparkles className="h-5 w-5" />,
-    description: "Craft a unique, memorable brand voice and visual identity that stands out in the market."
+  {
+    id: "web-development",
+    name: "Web Development",
+    icon: Monitor,
+    desc: "Lightning-fast, conversion-optimized digital experiences and platforms."
   },
-  { 
-    id: "content-creation", 
-    name: "Content Creation", 
-    icon: <PenTool className="h-5 w-5" />,
-    description: "High-quality, conversion-focused content including blogs, videos, and professional copywriting."
+  {
+    id: "performance-marketing",
+    name: "Performance Marketing",
+    icon: BarChart3,
+    desc: "Data-driven ad campaigns designed for immediate ROI and aggressive scaling."
   },
-  { 
-    id: "campaign-setup", 
-    name: "Campaign Setup & Optimization", 
-    icon: <Settings className="h-5 w-5" />,
-    description: "Precision-targeted ad campaigns engineered for maximum ROI and lowest cost per acquisition."
-  },
-  { 
-    id: "performance-tracking", 
-    name: "Performance Tracking & Reporting", 
-    icon: <BarChart className="h-5 w-5" />,
-    description: "Comprehensive analytics dashboards providing actionable insights into your campaign health."
-  },
+  {
+    id: "branding",
+    name: "Branding (Design/Video)",
+    icon: Palette,
+    desc: "Kinetic brand identities, video editing, and creatives built for digital ecosystems."
+  }
 ]
 
 export default function ServicesPage() {
   return (
-    <main className="bg-black min-h-screen flex flex-col">
+    <main className="bg-black min-h-screen flex flex-col relative overflow-hidden">
       <Navbar />
-      <div className="flex-1 pt-32 pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 text-balance animate-fade-up">
-              Our Services
-            </h1>
-            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              Comprehensive digital marketing solutions designed to accelerate your startup's growth.
-            </p>
-          </div>
 
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {services.map((service, index) => (
-              <li key={service.id} className="min-h-[16rem] list-none animate-fade-up relative z-50" style={{ animationDelay: `${(index + 2) * 0.1}s` }}>
-                <Link href={`/services/${service.id}`} className="block h-full group relative z-50 cursor-pointer pointer-events-auto">
-                  <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-[#343c43] p-2 md:rounded-[1.5rem] md:p-3 transition-transform duration-500 hover:-translate-y-2 cursor-pointer">
-                    
-                    {/* Interactive glowing effect layer */}
-                    <GlowingEffect
-                      spread={40}
-                      glow={true}
-                      disabled={false}
-                      proximity={64}
-                      inactiveZone={0.01}
-                      borderWidth={3}
-                    />
-                    
-                    {/* Core Inner Card Background */}
-                    <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border border-[#343c43] bg-black p-6 md:p-8 transition-colors duration-500 group-hover:border-[#5ec6ff]/30">
-                      
-                      {/* Subtle fixed background gradient block (acts as base before hover) */}
-                      <div
-                        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none -z-10"
-                        style={{ background: "linear-gradient(135deg, rgba(29, 78, 216, 0.05), rgba(94, 198, 255, 0.05))" }}
-                      />
+      <div className="flex-1 pt-32 pb-24 relative z-10 flex flex-col items-center">
+        {/* Ambient background glow */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#1D4ED8] rounded-full blur-[150px] opacity-15 -z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay -z-10 pointer-events-none" />
 
-                      <div className="relative flex flex-1 flex-col justify-between gap-3 z-10">
-                        {/* Icon Wrapper */}
-                        <div className="w-fit rounded-xl border border-[#343c43] bg-[#1d4ed8]/10 p-3 text-[#5ec6ff] shadow-inner group-hover:bg-[#1d4ed8]/20 transition-colors duration-300 group-hover:scale-110 transform">
-                          {service.icon}
-                        </div>
-                        
-                        <div className="space-y-4 mt-4">
-                          <h3 className="text-xl md:text-2xl font-semibold text-white group-hover:text-[#5ec6ff] transition-colors duration-300">
-                            {service.name}
-                          </h3>
-                          <p className="text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                            {service.description}
-                          </p>
-                        </div>
+        <div className="text-center mb-16 relative z-10 px-4">
+          <p className="text-[#5EC6FF] font-mono text-sm tracking-widest mb-4 uppercase">
+            // SYSTEMS & PROTOCOLS
+          </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white uppercase tracking-wide">
+            The Engine
+          </h1>
+          <p className="mt-4 text-[rgba(255,255,255,0.7)] max-w-2xl mx-auto text-lg">
+            A unified growth infrastructure spanning all critical digital channels.
+          </p>
+        </div>
 
-                        {/* Animated Underline */}
-                        <div
-                          className="mt-2 h-1 w-0 group-hover:w-16 transition-all duration-500 ease-out"
-                          style={{ background: "var(--gradient-primary)" }}
-                        />
-                      </div>
+        {/* Network Grid View */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+            
+            {/* Connecting lines for desktop (simulated network) */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block -z-10 opacity-30">
+              <path d="M 33% 20% L 66% 20% L 66% 60% L 33% 60% Z" fill="none" stroke="#343C43" strokeWidth="2" strokeDasharray="4 4" />
+              <path d="M 50% 40% L 50% 60%" fill="none" stroke="#343C43" strokeWidth="2" strokeDasharray="4 4" />
+            </svg>
 
-                    </div>
+            {SERVICES.map((s, i) => (
+              <Link key={s.id} href={`/services/${s.id}`} className="group relative block">
+                <div className="h-full bg-[#171A1F] border border-[#343C43] rounded-xl p-8 flex flex-col items-center text-center transition-all duration-300 group-hover:border-[#5EC6FF]/50 group-hover:shadow-[0_0_30px_rgba(94,198,255,0.15)] group-hover:-translate-y-2 overflow-hidden">
+                  
+                  {/* Hover scanline effect */}
+                  <div className="absolute inset-0 bg-[linear-gradient(transparent,rgba(94,198,255,0.05),transparent)] translate-y-[-100%] group-hover:animate-[scan_2s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 pointer-events-none" />
+
+                  <div className="w-16 h-16 rounded-full bg-[#0F1115] border border-[#343C43] flex items-center justify-center text-[#5EC6FF] mb-6 group-hover:scale-110 group-hover:border-[#5EC6FF] group-hover:glow-cyan transition-all duration-500">
+                    <s.icon className="w-8 h-8" />
                   </div>
-                </Link>
-              </li>
+
+                  <h3 className="text-xl font-display font-bold text-white mb-4 uppercase tracking-wider group-hover:text-[#5EC6FF] transition-colors">
+                    {s.name}
+                  </h3>
+                  <p className="text-[rgba(255,255,255,0.6)] font-sans text-sm leading-relaxed mb-8 flex-1">
+                    {s.desc}
+                  </p>
+
+                  <div className="mt-auto font-mono text-[10px] text-[#5EC6FF] uppercase tracking-widest flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                    <TerminalSquare className="w-3 h-3" />
+                    Initialize System <span className="ml-1">→</span>
+                  </div>
+                </div>
+              </Link>
             ))}
-          </ul>
+
+            {/* Empty/Placeholder for grid symmetry if needed */}
+            <div className="hidden lg:flex h-full border border-dashed border-[#343C43] rounded-xl p-8 flex-col items-center justify-center text-center opacity-50 relative overflow-hidden">
+              <div className="font-mono text-[#343C43] text-xs tracking-widest uppercase">
+                // SYSTEM_READY
+                <br/><br/>
+                Awaiting Protocol Expansion
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
       <Footer />

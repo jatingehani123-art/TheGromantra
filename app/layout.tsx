@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { Space_Grotesk, Inter, JetBrains_Mono, Press_Start_2P } from "next/font/google"
 import { ReactLenis } from "@/lib/lenis-provider"
+import { SiteLoader } from "@/components/ui/site-loader"
 import "./globals.css"
 
 const spaceGrotesk = Space_Grotesk({
@@ -31,10 +32,29 @@ const pressStart2P = Press_Start_2P({
 })
 
 export const metadata: Metadata = {
+  viewport: "width=device-width,initial-scale=1",
   title: "GROMANTRA — Digital Signal Architecture",
   description:
     "We don't make campaigns. We architect signals. Digital marketing, brand architecture, and growth systems for ambitious brands.",
+  keywords: ["digital marketing", "signal architecture", "branding", "SEO", "performance marketing", "web development"],
   generator: "v0.app",
+  openGraph: {
+    title: "GROMANTRA — Digital Signal Architecture",
+    description:
+      "Architecting digital signals for brands. SEO, social media, web development, performance marketing, branding.",
+    url: "https://gromantra.studio",
+    siteName: "GROMANTRA",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GROMANTRA — Digital Signal Architecture",
+    description:
+      "Architecting digital signals for brands. SEO, social media, web development, performance marketing, branding.",
+    images: ["/og-image.png"],
+  },
   icons: {
     icon: [
       {
@@ -66,12 +86,14 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ReactLenis root>
-          {/* Global grain overlay */}
-          <div className="grain-overlay" aria-hidden="true" />
-          {/* Global scanline overlay */}
-          <div className="scanline-overlay" aria-hidden="true" />
-          {children}
-          <Analytics />
+          <SiteLoader>
+            {/* Global grain overlay */}
+            <div className="grain-overlay" aria-hidden="true" />
+            {/* Global scanline overlay */}
+            <div className="scanline-overlay" aria-hidden="true" />
+            {children}
+            <Analytics />
+          </SiteLoader>
         </ReactLenis>
       </body>
     </html>

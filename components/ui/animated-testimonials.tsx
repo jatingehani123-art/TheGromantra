@@ -22,6 +22,26 @@ export const AnimatedTestimonials = ({
   autoplay?: boolean;
   className?: string;
 }) => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  // Keyboard navigation (← / →) support
+  const handleKeyDown = React.useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      handlePrev();
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      handleNext();
+    }
+  }, []);
+
+  // Focus the container on mount for immediate keyboard usage
+  React.useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.focus();
+    }
+  }, []);
+
   const [active, setActive] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -50,6 +70,10 @@ export const AnimatedTestimonials = ({
 
   return (
     <div
+      ref={containerRef}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+      aria-live="polite"
       className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-20", className)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -129,7 +153,7 @@ export const AnimatedTestimonials = ({
               type="button"
               aria-label="Previous testimonial"
               onClick={handlePrev}
-              className="h-10 w-10 rounded-full bg-[#1d4ed8]/20 border border-[#5ec6ff]/30 flex items-center justify-center hover:bg-[#1d4ed8]/40 transition-colors cursor-pointer active:scale-90"
+              className="h-10 w-10 rounded-full bg-[#1d4ed8]/20 border border-[#5ec6ff]/30 flex items-center justify-center hover:bg-[#1d4ed8]/40 transition-colors cursor-pointer active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5ec6ff]"
             >
               <ArrowLeft className="h-5 w-5 text-[#5ec6ff]" />
             </button>
@@ -137,7 +161,7 @@ export const AnimatedTestimonials = ({
               type="button"
               aria-label="Next testimonial"
               onClick={handleNext}
-              className="h-10 w-10 rounded-full bg-[#1d4ed8]/20 border border-[#5ec6ff]/30 flex items-center justify-center hover:bg-[#1d4ed8]/40 transition-colors cursor-pointer active:scale-90"
+              className="h-10 w-10 rounded-full bg-[#1d4ed8]/20 border border-[#5ec6ff]/30 flex items-center justify-center hover:bg-[#1d4ed8]/40 transition-colors cursor-pointer active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5ec6ff]"
             >
               <ArrowRight className="h-5 w-5 text-[#5ec6ff]" />
             </button>

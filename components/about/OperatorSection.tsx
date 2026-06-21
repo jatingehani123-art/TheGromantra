@@ -1,9 +1,8 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { MonitorPlay, Search, Zap, Crosshair, BarChart3, Bot, TerminalSquare } from "lucide-react"
-import { useRef, useState } from "react"
-import Image from "next/image"
+import { TerminalSquare } from "lucide-react"
+import { useRef } from "react"
 
 export function OperatorSection() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -16,7 +15,6 @@ export function OperatorSection() {
   const rotateX = useTransform(scrollYProgress, [0, 1], [15, -15])
   const rotateY = useTransform(scrollYProgress, [0, 1], [-10, 10])
 
-  const [easterEggActive, setEasterEggActive] = useState(false)
 
   const chips = [
     { label: "OPERATOR.STATUS: ONLINE", top: "10%", left: "-20%", delay: 0 },
@@ -29,8 +27,8 @@ export function OperatorSection() {
     <section ref={containerRef} className="py-40 bg-[#050508] relative overflow-hidden flex flex-col items-center justify-center min-h-screen">
       
       {/* Background elements */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay z-0" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1D4ED8] rounded-full blur-[150px] opacity-10 z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay -z-10 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1D4ED8] rounded-full blur-[150px] opacity-20 -z-10 pointer-events-none" />
 
       <div className="text-center relative z-20 max-w-3xl px-4 mb-32">
         <motion.h2 
@@ -60,7 +58,7 @@ export function OperatorSection() {
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
         >
           {/* Glowing Backlight */}
-          <div className="absolute -inset-4 bg-gradient-to-br from-[#5EC6FF] to-[#1D4ED8] opacity-20 blur-2xl animate-pulse" style={{ transform: "translateZ(-50px)" }} />
+          <div className="absolute -inset-4 bg-gradient-to-br from-[#5EC6FF] to-[#1D4ED8] opacity-30 blur-2xl animate-pulse -z-10 pointer-events-none" style={{ transform: "translateZ(-50px)" }} />
 
           {/* Glass Frame */}
           <div className="absolute inset-0 bg-[#171A1F]/50 backdrop-blur-md border border-[#5EC6FF]/40 rounded-xl overflow-hidden glow-blue flex items-center justify-center">
@@ -149,30 +147,8 @@ export function OperatorSection() {
           ))}
         </div>
 
-        {/* Easter Egg: Pixel Character */}
-        <div className="absolute -bottom-16 -right-10 md:-right-24 cursor-pointer group" onClick={() => setEasterEggActive(true)}>
-          <div className="relative">
-            {easterEggActive && (
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="absolute -top-12 -left-12 bg-white text-black font-pixel text-[8px] p-2 rounded shadow-[0_0_10px_#5EC6FF] whitespace-nowrap"
-              >
-                SYSTEM PILOT: JATIN
-                {/* Tail */}
-                <div className="absolute bottom-[-4px] right-6 w-2 h-2 bg-white rotate-45" />
-              </motion.div>
-            )}
-            <div className="w-12 h-12 bg-[#1D4ED8] rounded-sm relative shadow-[4px_4px_0_0_#5EC6FF] overflow-hidden hover:scale-110 transition-transform">
-              {/* Very primitive CSS pixel art face */}
-              <div className="absolute top-3 left-2 w-2 h-2 bg-white" />
-              <div className="absolute top-3 right-2 w-2 h-2 bg-white" />
-              <div className="absolute top-4 left-3 w-1 h-1 bg-black" />
-              <div className="absolute top-4 right-3 w-1 h-1 bg-black" />
-              <div className="absolute bottom-3 left-3 w-6 h-1 bg-white" />
-            </div>
-          </div>
-        </div>
+
+
 
       </div>
     </section>

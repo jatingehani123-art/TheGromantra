@@ -123,7 +123,7 @@ export default function PricingSection() {
                   </div>
 
                   <Link
-                    href="/get-started"
+                    href="/contact"
                     className={`w-full block text-center px-6 py-3 rounded-lg font-semibold mb-8 transition-all duration-300 ${
                       plan.recommended
                         ? "text-white hover:shadow-lg"

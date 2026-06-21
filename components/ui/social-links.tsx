@@ -52,7 +52,7 @@ export function SocialLinks({ socials, className, ...props }: SocialLinksProps) 
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "relative cursor-pointer px-5 py-2 transition-opacity duration-200 flex items-center gap-2 group",
+            "relative cursor-pointer px-5 py-2 transition-opacity duration-200 flex items-center gap-2 hover:scale-110 hover:shadow-lg transition-transform",
             hoveredSocial && hoveredSocial !== social.name
               ? "opacity-50"
               : "opacity-100"

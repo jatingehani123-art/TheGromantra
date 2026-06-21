@@ -1,225 +1,350 @@
 "use client"
+
+import { useState, use } from "react"
 import Link from "next/link"
-import { useParams } from "next/navigation"
+import { notFound } from "next/navigation"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import { Target, Megaphone, Sparkles, PenTool, Settings, BarChart } from "lucide-react"
+import { Target, Megaphone, Monitor, BarChart3, Palette, CheckCircle2, ChevronDown, Activity } from "lucide-react"
+import { motion } from "framer-motion"
 
-const serviceDetails: Record<string, any> = {
-  "digital-marketing-strategy": {
-    name: "Digital Marketing Strategy",
-    icon: <Target className="w-24 h-24 text-[#5ec6ff] mx-auto drop-shadow-[0_0_15px_rgba(94,198,255,0.5)]" />,
-    description: "Develop a comprehensive strategy to drive growth and engage your target audience.",
-    benefits: [
-      "Tailored strategy based on your business goals",
-      "Competitive market analysis",
-      "Audience targeting and personas",
-      "Multi-channel campaign planning",
-      "ROI-focused approach",
+// Centralized Services Data
+const SERVICES_DATA: Record<string, any> = {
+  "seo": {
+    name: "SEO",
+    tagline: "High-intent search architectures that capture demand.",
+    icon: Target,
+    themeColor: "rgba(94, 198, 255, 0.2)",
+    included: [
+      "Technical SEO Audits",
+      "On-Page Optimization",
+      "Content Strategy & Gap Analysis",
+      "High-Authority Link Building",
+      "Local SEO Optimization",
+      "Continuous Analytics & Reporting"
     ],
-    process: [
-      "Discovery & Analysis",
-      "Strategy Development",
-      "Plan Implementation",
-      "Performance Monitoring",
-      "Optimization & Scaling",
-    ],
+    stats: { label: "Organic Traffic Growth Potential", value: 312, suffix: "%" }
   },
-  "social-media-management": {
-    name: "Social Media Management",
-    icon: <Megaphone className="w-24 h-24 text-[#5ec6ff] mx-auto drop-shadow-[0_0_15px_rgba(94,198,255,0.5)]" />,
-    description: "Manage and grow your social media presence across all platforms.",
-    benefits: [
-      "Multi-platform content management",
-      "Audience engagement and community building",
-      "Real-time analytics and reporting",
-      "Influencer collaboration opportunities",
-      "Crisis management support",
+  "social-media": {
+    name: "Social Media & Content",
+    tagline: "Community-driven content frameworks that convert.",
+    icon: Megaphone,
+    themeColor: "rgba(29, 78, 216, 0.2)",
+    included: [
+      "Cross-Platform Content Calendars",
+      "Reels & Short-form Video Generation",
+      "Proactive Community Management",
+      "Influencer & Creator Coordination",
+      "Paid Social Campaign Setup",
+      "Trend Monitoring & Engagement"
     ],
-    process: [
-      "Account Setup & Optimization",
-      "Content Planning",
-      "Daily Management",
-      "Engagement & Community Building",
-      "Analytics & Reporting",
-    ],
+    stats: { label: "Engagement Rate Multiplier", value: 4, suffix: "x" }
   },
-  "branding-identity": {
-    name: "Branding & Identity",
-    icon: <Sparkles className="w-24 h-24 text-[#5ec6ff] mx-auto drop-shadow-[0_0_15px_rgba(94,198,255,0.5)]" />,
-    description: "Create a compelling brand identity that resonates with your audience.",
-    benefits: [
-      "Logo and visual identity design",
-      "Brand guidelines and specifications",
-      "Consistent brand messaging",
-      "Logo package (all formats)",
-      "Brand launch strategy",
+  "web-development": {
+    name: "Web Development",
+    tagline: "Lightning-fast, conversion-optimized digital platforms.",
+    icon: Monitor,
+    themeColor: "rgba(94, 198, 255, 0.2)",
+    included: [
+      "High-Converting Landing Pages",
+      "Full-Stack Custom Websites",
+      "E-commerce & Shopify Solutions",
+      "Core Web Vitals Optimization",
+      "Headless CMS Integration",
+      "Ongoing Maintenance & Security"
     ],
-    process: [
-      "Brand Discovery",
-      "Concept Development",
-      "Design & Iteration",
-      "Brand Guidelines",
-      "Launch & Implementation",
-    ],
+    stats: { label: "Average Conversion Lift", value: 45, suffix: "%" }
   },
-  "content-creation": {
-    name: "Content Creation",
-    icon: <PenTool className="w-24 h-24 text-[#5ec6ff] mx-auto drop-shadow-[0_0_15px_rgba(94,198,255,0.5)]" />,
-    description: "Create engaging, high-quality content that drives engagement.",
-    benefits: [
-      "Blog posts and articles",
-      "Social media content",
-      "Video content creation",
-      "Infographics and visuals",
-      "Email marketing content",
+  "performance-marketing": {
+    name: "Performance Marketing",
+    tagline: "Data-driven ad campaigns designed for immediate ROI.",
+    icon: BarChart3,
+    themeColor: "rgba(29, 78, 216, 0.2)",
+    included: [
+      "Google Search & Display Ads",
+      "Meta (Facebook/IG) Campaigns",
+      "Omnichannel Campaign Strategy",
+      "Continuous A/B Testing",
+      "Advanced Conversion Tracking",
+      "Dynamic Budget Optimization"
     ],
-    process: [
-      "Content Strategy",
-      "Research & Planning",
-      "Creation & Production",
-      "Editing & Optimization",
-      "Distribution & Promotion",
-    ],
+    stats: { label: "ROAS Target Efficiency", value: 250, suffix: "%+" }
   },
-  "campaign-setup": {
-    name: "Campaign Setup & Optimization",
-    icon: <Settings className="w-24 h-24 text-[#5ec6ff] mx-auto drop-shadow-[0_0_15px_rgba(94,198,255,0.5)]" />,
-    description: "Launch and optimize campaigns for maximum impact and ROI.",
-    benefits: [
-      "Campaign strategy and planning",
-      "Ad creation and optimization",
-      "Budget management and allocation",
-      "A/B testing",
-      "Performance tracking",
+  "branding": {
+    name: "Branding (Design/Video)",
+    tagline: "Kinetic brand identities built for digital ecosystems.",
+    icon: Palette,
+    themeColor: "rgba(94, 198, 255, 0.2)",
+    included: [
+      "Kinetic Brand Identity & Logos",
+      "Social Media Aesthetic Guidelines",
+      "High-Retention Video Editing",
+      "Motion Graphics & Micro-animations",
+      "Comprehensive Brand Guidelines",
+      "Packaging & Print Readiness"
     ],
-    process: [
-      "Objective Definition",
-      "Audience & Budget Setup",
-      "Creative Development",
-      "Campaign Launch",
-      "Continuous Optimization",
-    ],
-  },
-  "performance-tracking": {
-    name: "Performance Tracking & Reporting",
-    icon: <BarChart className="w-24 h-24 text-[#5ec6ff] mx-auto drop-shadow-[0_0_15px_rgba(94,198,255,0.5)]" />,
-    description: "Track and analyze your marketing performance with detailed insights.",
-    benefits: [
-      "Real-time analytics dashboard",
-      "Monthly performance reports",
-      "ROI tracking and analysis",
-      "Competitive benchmarking",
-      "Actionable insights and recommendations",
-    ],
-    process: [
-      "Metrics Definition",
-      "Dashboard Setup",
-      "Data Collection",
-      "Analysis & Insights",
-      "Reporting & Recommendations",
-    ],
-  },
+    stats: { label: "Brand Recall Increase", value: 87, suffix: "%" }
+  }
 }
 
-export default function ServiceDetailPage() {
-  const params = useParams()
-  const id = params?.id as string
-  const service = serviceDetails[id]
-
-  if (!service) {
-    return (
-      <main className="bg-black min-h-screen">
-        <Navbar />
-        <div className="pt-24 pb-16 text-center">
-          <h1 className="text-4xl font-bold text-white">Service not found</h1>
-        </div>
-        <Footer />
-      </main>
-    )
-  }
+function StatCounter({ targetValue, suffix }: { targetValue: number, suffix: string }) {
+  const [count, setCount] = useState(0)
 
   return (
-    <main className="bg-black min-h-screen">
+    <motion.div
+      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      onViewportEnter={() => {
+        let current = 0
+        const duration = 2000
+        const step = targetValue / (duration / 16)
+        
+        const timer = setInterval(() => {
+          current += step
+          if (current >= targetValue) {
+            setCount(targetValue)
+            clearInterval(timer)
+          } else {
+            setCount(Math.floor(current))
+          }
+        }, 16)
+      }}
+      className="text-7xl md:text-9xl font-display font-bold text-[#5EC6FF] glow-text"
+    >
+      {count}{suffix}
+    </motion.div>
+  )
+}
+
+export default function ServiceDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
+  const service = SERVICES_DATA[id]
+
+  if (!service) {
+    notFound()
+  }
+
+  const Icon = service.icon
+
+  return (
+    <main className="bg-[#050508] min-h-screen flex flex-col relative overflow-hidden">
       <Navbar />
-      <div className="pt-24 pb-16">
-        {/* Hero Banner */}
-        <div className="relative mb-16 overflow-hidden">
-          <div
-            className="absolute inset-0 blur-3xl"
-            style={{ background: "linear-gradient(to right, rgba(29, 78, 216, 0.2), rgba(94, 198, 255, 0.2))" }}
-          />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-            <div className="mb-6 flex justify-center">{service.icon}</div>
-            <h1 className="text-5xl sm:text-6xl font-bold text-white mb-4 animate-fade-up">{service.name}</h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              {service.description}
-            </p>
+
+      {/* SEC 1: HERO */}
+      <section className="relative min-h-[90vh] flex flex-col justify-center items-center">
+        <div 
+          className="absolute inset-0 blur-[150px] -z-10 pointer-events-none opacity-40" 
+          style={{ background: `radial-gradient(circle at center, ${service.themeColor}, transparent 50%)` }}
+        />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay -z-10 pointer-events-none" />
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center px-4 max-w-4xl mx-auto relative z-10"
+        >
+          <div className="w-20 h-20 mx-auto rounded-xl bg-[#0F1115] border border-[#5EC6FF]/50 flex items-center justify-center text-[#5EC6FF] mb-8 glow-blue animate-[float_4s_ease-in-out_infinite]">
+            <Icon className="w-10 h-10" />
+          </div>
+          <p className="text-[#5EC6FF] font-mono text-sm tracking-widest mb-4 uppercase">
+            // ACTIVE PROTOCOL
+          </p>
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-display font-bold text-white uppercase tracking-wide mb-6">
+            {service.name}
+          </h1>
+          <p className="text-xl md:text-2xl text-[rgba(255,255,255,0.7)] font-sans max-w-2xl mx-auto mb-10">
+            {service.tagline}
+          </p>
+          <Link 
+            href={`/contact?service=${encodeURIComponent(service.name)}`}
+            className="inline-block px-8 py-4 text-white font-mono uppercase tracking-widest bg-[#1D4ED8] hover:bg-[#5EC6FF] hover:text-black transition-all duration-300 glow-blue hover:glow-cyan relative overflow-hidden group"
+          >
+            Start Project <span className="ml-2 group-hover:ml-4 transition-all">→</span>
+          </Link>
+        </motion.div>
+
+        {/* Scroll cue indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        >
+          <span className="font-mono text-[10px] text-[#5EC6FF] tracking-widest uppercase">System Check</span>
+          <motion.div 
+            animate={{ y: [0, 10, 0] }} 
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            <ChevronDown className="w-5 h-5 text-[#5EC6FF]" />
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* SEC 2: WHAT'S INCLUDED (Scroll Cards) */}
+      <section className="py-32 relative z-10 border-t border-[#343C43]/50">
+        <div className="max-w-[90vw] mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white uppercase">System Capabilities</h2>
+          </motion.div>
+          
+          <div className="flex flex-col md:flex-row md:overflow-x-auto snap-y md:snap-x snap-mandatory gap-6 pb-8 hide-scrollbar">
+            {service.included.map((item: string, i: number) => (
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                key={i} 
+                className="snap-center md:snap-start shrink-0 w-full md:w-[400px] bg-[#171A1F]/50 backdrop-blur-md border border-[#343C43] rounded-xl p-8 flex flex-col items-start gap-6 hover:border-[#5EC6FF]/50 hover:shadow-[0_0_30px_rgba(94,198,255,0.15)] transition-all group"
+              >
+                <div className="p-3 rounded-lg bg-black/50 border border-[#343C43] group-hover:border-[#5EC6FF]/30 transition-colors">
+                  <CheckCircle2 className="w-8 h-8 text-[#1D4ED8] group-hover:text-[#5EC6FF] transition-colors" />
+                </div>
+                <h3 className="text-2xl font-display font-bold text-white">{item}</h3>
+                <p className="text-[rgba(255,255,255,0.6)] font-mono text-sm leading-relaxed">
+                  Included within the standard {service.name} deployment protocol. Optimizes overall output quality.
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
+      </section>
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Benefits Section */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-white mb-12">Key Benefits</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {service.benefits.map((benefit: string, i: number) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-4 p-6 rounded-xl card-glass border border-[#343c43] hover:border-[#5ec6ff]/50 transition-all"
+      {/* SEC 3: HOW IT WORKS (Checkpoint Timeline) */}
+      <section className="py-32 relative z-10 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-24"
+          >
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white uppercase">Execution Track</h2>
+          </motion.div>
+          
+          <div className="relative">
+            {/* Animated Horizontal Line for Desktop */}
+            <motion.div 
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="hidden md:block absolute top-12 left-0 right-0 h-[2px] bg-gradient-to-r from-[#1D4ED8] via-[#5EC6FF] to-[#1D4ED8] origin-left" 
+            />
+            
+            {/* Animated Vertical Line for Mobile */}
+            <motion.div 
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="block md:hidden absolute top-0 bottom-0 left-12 w-[2px] bg-gradient-to-b from-[#1D4ED8] via-[#5EC6FF] to-[#1D4ED8] origin-top" 
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+              {[
+                { title: "DISCOVER", desc: "System audit & gap analysis" },
+                { title: "STRATEGIZE", desc: "Blueprint & resource allocation" },
+                { title: "EXECUTE", desc: "Launch & integrate protocols" },
+                { title: "OPTIMIZE", desc: "Live tuning & reporting" }
+              ].map((step, i) => (
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: 0.5 + (i * 0.2), duration: 0.5 }}
+                  key={i} 
+                  className="relative flex flex-row md:flex-col items-center text-left md:text-center gap-6 md:gap-0"
                 >
-                  <div
-                    className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1 text-white text-sm"
-                    style={{ background: "var(--gradient-primary)" }}
-                  >
-                    ✓
+                  <div className="w-24 h-24 rounded-full bg-[#0F1115] border-2 border-[#5EC6FF] flex items-center justify-center text-[#5EC6FF] font-mono text-xl md:mb-8 relative z-10 shadow-[0_0_30px_rgba(94,198,255,0.4)] shrink-0">
+                    {i + 1}
                   </div>
-                  <p className="text-gray-300">{benefit}</p>
-                </div>
+                  <div>
+                    <h3 className="text-white font-mono uppercase tracking-widest mb-2 text-xl">{step.title}</h3>
+                    <p className="text-[rgba(255,255,255,0.6)] text-sm">{step.desc}</p>
+                  </div>
+                </motion.div>
               ))}
             </div>
-          </div>
-
-          {/* Process Section */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-white mb-12">Our Process</h2>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-              {service.process.map((step: string, i: number) => (
-                <div key={i} className="relative">
-                  {i < service.process.length - 1 && (
-                    <div
-                      className="hidden md:block absolute top-12 left-1/2 w-full h-1 -z-10"
-                      style={{ background: "linear-gradient(to right, #1d4ed8, #5ec6ff)" }}
-                    />
-                  )}
-                  <div className="text-center p-6 rounded-xl gradient-accent border border-[#343c43] relative z-10">
-                    <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold"
-                      style={{ background: "var(--gradient-primary)" }}
-                    >
-                      {i + 1}
-                    </div>
-                    <p className="text-white font-semibold text-sm">{step}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center p-12 rounded-xl gradient-accent border border-[#343c43]">
-            <h2 className="text-2xl font-bold text-white mb-4">Ready to get started?</h2>
-            <p className="text-gray-400 mb-6">Let's discuss how we can help grow your business.</p>
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-3 rounded-lg text-white font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-              style={{ background: "var(--gradient-primary)", boxShadow: "rgba(94, 198, 255, 0.5) 0 0 20px" }}
-            >
-              Contact Us
-            </Link>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* SEC 4: RESULTS / PROOF VISUAL */}
+      <section className="py-32 relative z-10 border-t border-[#343C43]/50 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5 mix-blend-overlay -z-10 pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
+            <Activity className="w-16 h-16 text-[#1D4ED8] mx-auto mb-6 glow-blue" />
+            <h2 className="text-2xl md:text-3xl font-mono text-white uppercase tracking-widest mb-2">
+              Measurable Outcomes
+            </h2>
+            <p className="text-[rgba(255,255,255,0.6)]">Built for absolute scale.</p>
+          </motion.div>
+          
+          <StatCounter targetValue={service.stats.value} suffix={service.stats.suffix} />
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-xl md:text-2xl text-[rgba(255,255,255,0.8)] font-sans mt-8"
+          >
+            {service.stats.label}
+          </motion.p>
+        </div>
+      </section>
+
+      {/* SEC 5: WHY THIS SERVICE & CTA */}
+      <section className="py-32 bg-[#050508] relative z-10 border-t border-[#343C43]/50">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-display font-bold text-white uppercase mb-8"
+          >
+            The Solo Operator Advantage
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-xl md:text-2xl text-[rgba(255,255,255,0.7)] mb-14 leading-relaxed"
+          >
+            Agencies pass your {service.name} project from account managers to junior staff, diluting the strategy. With Gromantra, the same system architect who builds the strategy executes the daily operations. Zero communication lag, maximum accountability.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            <Link 
+              href={`/contact?service=${encodeURIComponent(service.name)}`}
+              className="inline-block px-12 py-6 text-black font-mono font-bold text-lg uppercase tracking-widest bg-[#5EC6FF] hover:bg-white transition-all duration-300 shadow-[0_0_40px_rgba(94,198,255,0.5)] hover:shadow-[0_0_60px_rgba(255,255,255,0.6)] hover:scale-105 active:scale-95"
+            >
+              Deploy This System
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
     </main>
   )

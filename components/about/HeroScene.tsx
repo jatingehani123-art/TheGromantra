@@ -7,6 +7,7 @@ import { EffectComposer, Bloom, Scanline, ChromaticAberration } from "@react-thr
 import { BlendFunction } from "postprocessing"
 import * as THREE from "three"
 import { motion, AnimatePresence } from "framer-motion"
+import Link from "next/link"
 
 function DataGraph() {
   const points = useMemo(() => {
@@ -139,7 +140,7 @@ export function HeroScene() {
           className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white font-display mb-6 uppercase text-balance"
         >
           Growth Is Not Luck. <br />
-          <span className="text-transparent bg-clip-text gradient-primary glow-text relative">
+          <span className="inline-block text-transparent bg-clip-text gradient-primary glow-text relative">
             It's Engineered.
             <motion.span 
               animate={{ opacity: [0, 1, 0] }} 
@@ -166,14 +167,14 @@ export function HeroScene() {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="flex flex-col sm:flex-row gap-6 pointer-events-auto"
         >
-          <button className="px-8 py-4 text-white font-mono uppercase tracking-widest bg-[#1D4ED8] hover:bg-[#5EC6FF] hover:text-black transition-all duration-300 glow-blue hover:glow-cyan relative overflow-hidden group">
+          <Link href="/contact" className="px-8 py-4 text-white font-mono uppercase tracking-widest bg-[#1D4ED8] hover:bg-[#5EC6FF] hover:text-black transition-all duration-300 glow-blue hover:glow-cyan relative overflow-hidden group inline-block">
             <span className="relative z-10">Start The Race</span>
             <div className="absolute inset-0 bg-[#5EC6FF] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out" />
-          </button>
+          </Link>
           
-          <button className="px-8 py-4 text-white font-mono uppercase tracking-widest border border-[#343C43] hover:border-[#5EC6FF] transition-colors duration-300 bg-[#171A1F]/80 backdrop-blur-md">
+          <Link href="/services" className="px-8 py-4 text-white font-mono uppercase tracking-widest border border-[#343C43] hover:border-[#5EC6FF] transition-colors duration-300 bg-[#171A1F]/80 backdrop-blur-md inline-block">
             View Our Process
-          </button>
+          </Link>
         </motion.div>
       </div>
 
@@ -181,7 +182,7 @@ export function HeroScene() {
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20 pointer-events-none mix-blend-overlay z-1" />
 
       {/* Bottom Gradient Overlay (pointer-events-none to prevent blocking) */}
-      <div className="absolute bottom-0 w-full h-40 bg-gradient-to-t from-[#0F1115] to-transparent z-0 pointer-events-none" />
+      <div className="absolute bottom-0 w-full h-40 bg-gradient-to-t from-[#0F1115] to-transparent -z-10 pointer-events-none" />
     </div>
   )
 }

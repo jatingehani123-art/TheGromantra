@@ -3,11 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials"
 
-/* ═══════════════════════════════════════════════
-   TESTIMONIALS SECTION
-   Uses the original AnimatedTestimonials component
-   with updated typography to match the new design.
-   ═══════════════════════════════════════════════ */
+
 
 export default function TestimonialsSection() {
   const sectionRef = useRef<HTMLDivElement>(null)

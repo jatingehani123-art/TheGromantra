@@ -41,8 +41,8 @@ This is an end-to-end growth infrastructure built for scale.`
   return (
     <section ref={containerRef} className="py-32 bg-[#050508] relative overflow-hidden">
       {/* Background Circuit Grid & Particles */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.15),transparent_50%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay -z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.30),transparent_50%)] -z-10 pointer-events-none blur-3xl opacity-30" />
 
       <div className="max-w-4xl mx-auto px-4 relative z-10">
         

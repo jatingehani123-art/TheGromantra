@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import Link from "next/link"
 
 /* ═══════════════════════════════════════════════
    SERVICES — HORIZONTAL SCROLL NARRATIVE CHAMBER
@@ -11,28 +12,33 @@ import { useEffect, useRef, useState } from "react"
 const SERVICES = [
   {
     num: "01",
-    name: "Brand Architecture",
-    description: "Foundation systems that define market position.",
+    name: "SEO",
+    slug: "seo",
+    description: "High-intent search architectures that capture demand.",
   },
   {
     num: "02",
-    name: "Motion & Identity",
-    description: "Visual language that moves and breathes.",
+    name: "Social Media & Content",
+    slug: "social-media",
+    description: "Community-driven content frameworks that convert.",
   },
   {
     num: "03",
-    name: "Digital Campaigns",
-    description: "Precision-targeted signals across channels.",
+    name: "Web Development",
+    slug: "web-development",
+    description: "Lightning-fast, conversion-optimized platforms.",
   },
   {
     num: "04",
-    name: "Growth Systems",
-    description: "Scalable engines built for compounding returns.",
+    name: "Performance Marketing",
+    slug: "performance-marketing",
+    description: "Data-driven campaigns designed for immediate ROI.",
   },
   {
     num: "05",
-    name: "Strategy & Intelligence",
-    description: "Data architecture that informs every decision.",
+    name: "Branding",
+    slug: "branding",
+    description: "Kinetic brand identities built for digital ecosystems.",
   },
 ]
 
@@ -134,9 +140,11 @@ export default function ServicesSection() {
           {SERVICES.map((service, i) => {
             const isHovered = hoveredIndex === i
             return (
-              <div
+              <Link
                 key={i}
-                className="relative flex-shrink-0 h-full flex items-center cursor-pointer"
+                href={`/services/${service.slug}`}
+                aria-label={`Open ${service.name} service page`}
+                className="relative flex-shrink-0 h-full flex items-center cursor-pointer block group hover:ring-2 hover:ring-[#5ec6ff]"
                 style={{
                   width: `${roomWidth}px`,
                   padding: "0 5vw",
@@ -221,7 +229,7 @@ export default function ServicesSection() {
                     transition: "opacity 0.4s ease",
                   }}
                 />
-              </div>
+              </Link>
             )
           })}
         </div>

@@ -130,10 +130,10 @@ export default function Footer() {
           >
             <h4 className="font-display text-white font-bold mb-4 text-sm">Product</h4>
             <div className="space-y-3">
-              <Link href="#" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
+              <Link href="/#features" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
                 Features
               </Link>
-              <Link href="#" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
+              <Link href="/contact" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
                 Pricing
               </Link>
               <Link href="/services" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
@@ -155,7 +155,7 @@ export default function Footer() {
               <Link href="/about" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
                 About Us
               </Link>
-              <Link href="#" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
+              <Link href="/blog" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
                 Blog
               </Link>
               <Link href="/contact" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
@@ -177,10 +177,10 @@ export default function Footer() {
               <Link href="/contact" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
                 Get in touch
               </Link>
-              <Link href="#" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
+              <Link href="/contact" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
                 Help Center
               </Link>
-              <Link href="#" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
+              <Link href="/contact" className="font-body-mono text-xs hover:text-[#5ec6ff] hover:pl-2 transition-all duration-300 block" style={{ color: "var(--gm-data)" }}>
                 Privacy Policy
               </Link>
             </div>
