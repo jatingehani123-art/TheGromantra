@@ -1,9 +1,14 @@
-"use client"
-
+import type { Metadata } from "next"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { ContactForm } from "@/components/ui/contact-form"
 import { Mail, Phone, MapPin, Twitter, Linkedin, Instagram } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Contact GROMANTRA | Secure Communications Channel",
+  description: "Get in touch with Jatin Gehani, founder and system architect of GROMANTRA. Launch custom growth systems and digital signals for your business.",
+  keywords: ["contact GROMANTRA", "Jatin Gehani email", "digital marketing services contact", "start growth marketing project"],
+}
 
 export default function ContactPage() {
   return (

@@ -1,0 +1,39 @@
+# User-agent directives for GROMANTRA - Digital Signal Architecture
+
+# 1. Allow search engines & primary crawlers
+User-agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /static/
+
+# 2. Allow AI search assistant crawlers for citation readiness (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# 3. Disallow model-training scraper bots (to protect IP)
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+# 4. Sitemap reference
+Sitemap: https://gromantra.studio/sitemap.xml

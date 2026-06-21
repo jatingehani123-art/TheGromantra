@@ -31,8 +31,12 @@ const pressStart2P = Press_Start_2P({
   display: "swap",
 })
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+}
+
 export const metadata: Metadata = {
-  viewport: "width=device-width,initial-scale=1",
   title: "GROMANTRA — Digital Signal Architecture",
   description:
     "We don't make campaigns. We architect signals. Digital marketing, brand architecture, and growth systems for ambitious brands.",

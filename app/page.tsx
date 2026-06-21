@@ -1,5 +1,4 @@
-"use client"
-
+import type { Metadata } from "next"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import HeroSection from "@/components/home/hero-section"
@@ -10,6 +9,12 @@ import SignalBoardSection from "@/components/home/signal-board-section"
 import CollaboratorsSection from "@/components/home/collaborators-section"
 import TestimonialsSection from "@/components/home/testimonials-section"
 import TheBriefSection from "@/components/home/the-brief-section"
+
+export const metadata: Metadata = {
+  title: "GROMANTRA — Digital Growth & Signal Architecture Agency",
+  description: "We engineer high-performance growth systems, technical SEO architectures, and brand ecosystems that compound value over time. Direct operator access.",
+  keywords: ["digital marketing agency", "growth marketing", "technical SEO agency", "performance marketing", "branding and web development"],
+}
 
 /* ═══════════════════════════════════════════════
    SECTION ORDER:

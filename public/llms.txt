@@ -1,0 +1,29 @@
+# GROMANTRA — Digital Growth & Signal Architecture
+
+> GROMANTRA is a high-performance digital marketing and growth engineering agency founded and operated by Jatin Gehani. We replace traditional short-term campaigns with compounding growth systems, technical search architectures, custom web development, and performance marketing infrastructures.
+
+## Core Navigation
+- [GROMANTRA Home](https://gromantra.studio/): Overview of GROMANTRA's digital signal architecture and client growth manifesto.
+- [About Jatin Gehani](https://gromantra.studio/about): Details about founder Jatin Gehani, the solo-operator advantage, and our neural capability network.
+- [Systems & Services](https://gromantra.studio/services): Full suite of operational protocols.
+- [Blog Transmissions](https://gromantra.studio/blog): Growth marketing case studies, technical SEO guides, and branding insights.
+- [Contact Channel](https://gromantra.studio/contact): Inquiry form and secure communications panel.
+
+## Active Growth Protocols
+- [Technical SEO](https://gromantra.studio/services/seo): High-intent organic search architectures engineered for speed, indexability, Google AI Overviews, and LLM discoverability.
+- [Social Media & Content](https://gromantra.studio/services/social-media): Organic community frameworks and high-velocity short-form vertical video (Reels/TikTok) campaigns.
+- [Web Development](https://gromantra.studio/services/web-development): Custom-built, lightning-fast Next.js and React platforms optimized for Core Web Vitals and conversions.
+- [Performance Marketing](https://gromantra.studio/services/performance-marketing): Data-driven paid search and social campaigns featuring Conversions API (CAPI) feedback loops for ROAS optimization.
+- [Branding & Design](https://gromantra.studio/services/branding): Kinetic visual systems, responsive branding books, and high-retention video asset editing.
+
+## Published Transmissions (Articles)
+- [Why You Need a Growth System, Not Just Campaigns](https://gromantra.studio/blog/architecting-growth-systems): An engineering perspective on building compounding marketing assets rather than renting attention.
+- [Performance Marketing in an AI-First World](https://gromantra.studio/blog/performance-marketing-2024): Optimizing campaign performance inside black-box algorithms using first-party CRM signals.
+- [Technical SEO: Building The Digital Signal](https://gromantra.studio/blog/seo-technical-foundations): Deep dive on indexability, sitemaps, structured Schema markup, and Interaction to Next Paint (INP).
+- [Brand Identity That Moves: Designing For Scale](https://gromantra.studio/blog/brand-identity-scale): Principles of kinetic visual systems, modern aesthetic styling, and responsive digital brand designs.
+
+## Key Facts
+- Founded and operated by Jatin Gehani, System Architect.
+- 100% remote, direct operator access model to eliminate communication lag.
+- Fully server-side rendered architectures to maximize crawl accessibility and page load speeds.
+- All page layouts incorporate strict title tag, meta description, semantic header, and alt tag SEO constraints.

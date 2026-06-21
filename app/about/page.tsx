@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { HeroScene } from "@/components/about/HeroScene"
 import { TerminalIntro } from "@/components/about/TerminalIntro"
 import { OperatorSection } from "@/components/about/OperatorSection"
@@ -6,6 +7,12 @@ import { WhyGromantra } from "@/components/about/WhyGromantra"
 import { FinalCTA } from "@/components/about/FinalCTA"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+
+export const metadata: Metadata = {
+  title: "About Jatin Gehani & GROMANTRA | Digital Signal Architecture",
+  description: "Learn about GROMANTRA's solo operator model founded by Jatin Gehani. High-performance engineering, automated technical SEO, and data-driven ad systems.",
+  keywords: ["Jatin Gehani", "GROMANTRA founder", "digital marketing consultant", "growth engineering", "solo operator marketing"],
+}
 
 export default function AboutPage() {
   return (

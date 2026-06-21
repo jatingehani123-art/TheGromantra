@@ -1,9 +1,14 @@
-"use client"
-
+import type { Metadata } from "next"
 import Link from "next/link"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { GlowingEffect } from "@/components/ui/glowing-effect"
+
+export const metadata: Metadata = {
+  title: "GROMANTRA Transmissions | Growth Strategy & SEO Blog",
+  description: "Insights on technical SEO, brand identity, performance marketing, and automated growth systems by Jatin Gehani.",
+  keywords: ["technical SEO blog", "growth marketing strategies", "performance marketing", "Jatin Gehani articles"],
+}
 
 const POSTS = [
   {

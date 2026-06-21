@@ -103,7 +103,7 @@ export default function TestimonialsSection() {
           testimonials={testimonials} 
           autoplay={true} 
           showButtons={false} 
-          autoplayInterval={3000} 
+          autoplayInterval={2000} 
         />
       </div>
     </section>

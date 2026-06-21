@@ -1,9 +1,14 @@
-"use client"
-
+import type { Metadata } from "next"
 import Link from "next/link"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Target, Megaphone, Monitor, BarChart3, Palette, TerminalSquare } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "GROMANTRA Systems & Services | Digital Growth Engine",
+  description: "Explore our growth protocols: automated technical SEO, high-conversion performance marketing, custom web engineering, community social media, and kinetic brand identity.",
+  keywords: ["technical SEO services", "performance marketing services", "conversion web development", "brand identity design", "social media strategy"],
+}
 
 const SERVICES = [
   {
