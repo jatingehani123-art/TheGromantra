@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "GROMANTRA — Digital Signal Architecture",
     description:
       "Architecting digital signals for brands. SEO, social media, web development, performance marketing, branding.",
-    url: "https://gromantra.studio",
+    url: "https://thegromantra.com",
     siteName: "GROMANTRA",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     locale: "en_US",

@@ -36,4 +36,4 @@ User-agent: cohere-ai
 Disallow: /
 
 # 4. Sitemap reference
-Sitemap: https://gromantra.studio/sitemap.xml
+Sitemap: https://thegromantra.com/sitemap.xml

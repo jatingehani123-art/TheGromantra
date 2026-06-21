@@ -95,7 +95,7 @@ export default function Footer() {
             className="font-body-mono text-xs tracking-[0.15em] uppercase mt-6"
             style={{ color: "var(--gm-data)" }}
           >
-            gromantra.studio — est. 2021
+            thegromantra.com — est. 2021
           </p>
         </div>
       </div>

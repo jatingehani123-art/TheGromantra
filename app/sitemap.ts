@@ -2,7 +2,7 @@ import { MetadataRoute } from "next"
 import { POSTS_DATA } from "@/lib/blog-data"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://gromantra.studio"
+  const baseUrl = "https://thegromantra.com"
 
   // 1. Static site routes
   const routes = ["", "/about", "/contact", "/services", "/blog"].map((route) => ({
