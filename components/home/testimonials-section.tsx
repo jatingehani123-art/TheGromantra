@@ -23,38 +23,38 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       quote:
-        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-      name: "Sarah Chen",
-      designation: "Product Manager at TechFlow",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "Gromantra completely overhauled our organic search strategy. In just 4 months, our inbound leads grew by 150%. Their data-driven approach is a breath of fresh air in the marketing space.",
+      name: "Aarav Sharma",
+      designation: "Founder, Zylker Technologies (Bengaluru)",
+      src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop",
     },
     {
       quote:
-        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-      name: "Michael Rodriguez",
-      designation: "CTO at InnovateSphere",
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "Their performance marketing campaigns are incredibly creative and convert exceptionally well. We saw an immediate lift in online sales and a significant drop in acquisition costs.",
+      name: "Priya Patel",
+      designation: "Head of Marketing, Vistara Retail (Mumbai)",
+      src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1000&auto=format&fit=crop",
     },
     {
       quote:
-        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-      name: "Emily Watson",
-      designation: "Operations Director at CloudScale",
-      src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "Working with Gromantra has been a game-changer. They didn't just manage our search ads; they optimized our entire funnel, resulting in a 4.2x ROI on our ad spend.",
+      name: "Rohan Mehta",
+      designation: "CEO, BlueStone Apparel (Ahmedabad)",
+      src: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1000&auto=format&fit=crop",
     },
     {
       quote:
-        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-      name: "James Kim",
-      designation: "Engineering Lead at DataPro",
-      src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "The level of transparency and analytical depth they offer is unparalleled. We always know exactly where our budget is going and the results are clearly visible in our metrics.",
+      name: "Anjali Nair",
+      designation: "Director of Growth, EduKite (New Delhi)",
+      src: "https://images.unsplash.com/photo-1580894732444-8fecef2271ff?q=80&w=1000&auto=format&fit=crop",
     },
     {
       quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      name: "Lisa Thompson",
-      designation: "VP of Technology at FutureNet",
-      src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "Their SEO expertise put us at the top of local search results in multiple regions. Our booking volume has been consistent, and local brand visibility has never been higher.",
+      name: "Vikram Malhotra",
+      designation: "Co-Founder, UrbanStay Rentals (Goa)",
+      src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop",
     },
   ]
 
@@ -99,7 +99,12 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Original AnimatedTestimonials component */}
-        <AnimatedTestimonials testimonials={testimonials} autoplay={true} />
+        <AnimatedTestimonials 
+          testimonials={testimonials} 
+          autoplay={true} 
+          showButtons={false} 
+          autoplayInterval={3000} 
+        />
       </div>
     </section>
   )

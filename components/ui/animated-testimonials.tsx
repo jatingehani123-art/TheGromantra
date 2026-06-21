@@ -17,10 +17,14 @@ export const AnimatedTestimonials = ({
   testimonials,
   autoplay = false,
   className,
+  showButtons = true,
+  autoplayInterval = 3000,
 }: {
   testimonials: Testimonial[];
   autoplay?: boolean;
   className?: string;
+  showButtons?: boolean;
+  autoplayInterval?: number;
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
@@ -56,7 +60,7 @@ export const AnimatedTestimonials = ({
 
   useEffect(() => {
     if (autoplay && !isHovered) {
-      intervalRef.current = setInterval(handleNext, 5000);
+      intervalRef.current = setInterval(handleNext, autoplayInterval);
       return () => {
         if (intervalRef.current) clearInterval(intervalRef.current);
       };
@@ -66,7 +70,7 @@ export const AnimatedTestimonials = ({
         intervalRef.current = null;
       }
     }
-  }, [autoplay, isHovered, handleNext]);
+  }, [autoplay, isHovered, handleNext, autoplayInterval]);
 
   return (
     <div
@@ -148,24 +152,26 @@ export const AnimatedTestimonials = ({
           </AnimatePresence>
 
           {/* Navigation Buttons - always visible, never covered */}
-          <div className="flex gap-4 pt-12 md:pt-4">
-            <button
-              type="button"
-              aria-label="Previous testimonial"
-              onClick={handlePrev}
-              className="h-10 w-10 rounded-full bg-[#1d4ed8]/20 border border-[#5ec6ff]/30 flex items-center justify-center hover:bg-[#1d4ed8]/40 transition-colors cursor-pointer active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5ec6ff]"
-            >
-              <ArrowLeft className="h-5 w-5 text-[#5ec6ff]" />
-            </button>
-            <button
-              type="button"
-              aria-label="Next testimonial"
-              onClick={handleNext}
-              className="h-10 w-10 rounded-full bg-[#1d4ed8]/20 border border-[#5ec6ff]/30 flex items-center justify-center hover:bg-[#1d4ed8]/40 transition-colors cursor-pointer active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5ec6ff]"
-            >
-              <ArrowRight className="h-5 w-5 text-[#5ec6ff]" />
-            </button>
-          </div>
+          {showButtons && (
+            <div className="flex gap-4 pt-12 md:pt-4">
+              <button
+                type="button"
+                aria-label="Previous testimonial"
+                onClick={handlePrev}
+                className="h-10 w-10 rounded-full bg-[#1d4ed8]/20 border border-[#5ec6ff]/30 flex items-center justify-center hover:bg-[#1d4ed8]/40 transition-colors cursor-pointer active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5ec6ff]"
+              >
+                <ArrowLeft className="h-5 w-5 text-[#5ec6ff]" />
+              </button>
+              <button
+                type="button"
+                aria-label="Next testimonial"
+                onClick={handleNext}
+                className="h-10 w-10 rounded-full bg-[#1d4ed8]/20 border border-[#5ec6ff]/30 flex items-center justify-center hover:bg-[#1d4ed8]/40 transition-colors cursor-pointer active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5ec6ff]"
+              >
+                <ArrowRight className="h-5 w-5 text-[#5ec6ff]" />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
