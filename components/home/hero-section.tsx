@@ -144,12 +144,24 @@ export default function HeroSection() {
               transition: "transform 0.15s ease-out",
             }}
           >
+            {/* Mobile fallback — visible on small screens, hidden on md+ */}
+            <div className="md:hidden w-full h-full flex items-center justify-center">
+              <img
+                src="/og-image.png"
+                alt="GROMANTRA — Digital Signal Architecture"
+                className="w-full h-full object-contain opacity-80"
+                style={{ maxHeight: "100%" }}
+              />
+            </div>
+            {/* Spline 3D — hidden on mobile, mounted on md+ */}
             <iframe
               src="https://my.spline.design/genkubgreetingrobot-V1H5uECOTWm6TowfLYpNhmWu/"
               frameBorder="0"
               width="100%"
               height="100%"
-              style={{ border: "none", display: "block", background: "transparent" }}
+              loading="lazy"
+              className="hidden md:block"
+              style={{ border: "none", display: undefined, background: "transparent" }}
               title="Gromantra 3D Robot"
             />
           </div>

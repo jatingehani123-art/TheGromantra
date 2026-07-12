@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "GROMANTRA Systems & Services | Digital Growth Engine",
   description: "Explore our growth protocols: automated technical SEO, high-conversion performance marketing, custom web engineering, community social media, and kinetic brand identity.",
   keywords: ["technical SEO services", "performance marketing services", "conversion web development", "brand identity design", "social media strategy"],
+  alternates: { canonical: "https://thegromantra.com/services" },
 }
 
 const SERVICES = [
@@ -70,13 +71,13 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
             
             {/* Connecting lines for desktop (simulated network) */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block -z-10 opacity-30">
-              <path d="M 33% 20% L 66% 20% L 66% 60% L 33% 60% Z" fill="none" stroke="#343C43" strokeWidth="2" strokeDasharray="4 4" />
-              <path d="M 50% 40% L 50% 60%" fill="none" stroke="#343C43" strokeWidth="2" strokeDasharray="4 4" />
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block -z-10 opacity-30">
+              <path d="M 33 20 L 66 20 L 66 60 L 33 60 Z" fill="none" stroke="#343C43" strokeWidth="0.5" strokeDasharray="1 1" />
+              <path d="M 50 40 L 50 60" fill="none" stroke="#343C43" strokeWidth="0.5" strokeDasharray="1 1" />
             </svg>
 
             {SERVICES.map((s, i) => (
-              <Link key={s.id} href={`/services/${s.id}`} className="group relative block">
+              <Link key={s.id} href={`/services/${s.id}`} className="group relative z-20 pointer-events-auto block">
                 <div className="h-full bg-[#171A1F] border border-[#343C43] rounded-xl p-8 flex flex-col items-center text-center transition-all duration-300 group-hover:border-[#5EC6FF]/50 group-hover:shadow-[0_0_30px_rgba(94,198,255,0.15)] group-hover:-translate-y-2 overflow-hidden">
                   
                   {/* Hover scanline effect */}

@@ -66,7 +66,7 @@ export function OperatorSection() {
             {/* The Photo */}
             <div className="relative w-full h-full opacity-90 mix-blend-screen saturate-50 contrast-125">
               <img 
-                src="/jatin.png" 
+                src="/jatin.jpeg" 
                 alt="Jatin Gehani - Founder Hologram" 
                 className="object-cover w-full h-full"
                 onError={(e) => {

@@ -29,13 +29,13 @@ export default function Navbar() {
     <>
       {/* Background overlay for scrolling */}
       <div 
-        className={`fixed top-0 left-0 right-0 h-20 transition-all duration-500 z-40 pointer-events-none ${
+        className={`fixed top-0 left-0 right-0 h-20 transition-all duration-500 z-[90] pointer-events-none ${
           isScrolled ? "bg-black/80 backdrop-blur-md border-b border-[#343c43]/50" : "bg-transparent"
         }`} 
       />
       
       {/* Logo & Brand */}
-      <nav className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+      <nav className="fixed top-0 left-0 right-0 z-[100] pointer-events-none">
         <div className="mx-auto" style={{ padding: "0 5vw" }}>
           <div className="flex justify-between items-center h-20">
             {/* Logo */}

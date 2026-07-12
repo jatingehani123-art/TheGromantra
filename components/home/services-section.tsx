@@ -48,6 +48,15 @@ export default function ServicesSection() {
   const [progress, setProgress] = useState(0)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [isInView, setIsInView] = useState(false)
+  const [roomWidth, setRoomWidth] = useState(1920)
+
+  // Track window resize for room width
+  useEffect(() => {
+    const updateWidth = () => setRoomWidth(window.innerWidth)
+    updateWidth()
+    window.addEventListener("resize", updateWidth)
+    return () => window.removeEventListener("resize", updateWidth)
+  }, [])
 
   // Track scroll progress through the tall section
   useEffect(() => {
@@ -73,7 +82,6 @@ export default function ServicesSection() {
   }, [])
 
   // Calculate translateX for the horizontal runner
-  const roomWidth = typeof window !== "undefined" ? window.innerWidth : 1920
   const totalWidth = roomWidth * SERVICES.length
   const maxShift = totalWidth - roomWidth
   const translateX = -progress * maxShift
@@ -144,7 +152,7 @@ export default function ServicesSection() {
                 key={i}
                 href={`/services/${service.slug}`}
                 aria-label={`Open ${service.name} service page`}
-                className="relative flex-shrink-0 h-full flex items-center cursor-pointer block group hover:ring-2 hover:ring-[#5ec6ff]"
+                className="relative flex-shrink-0 h-full flex items-center cursor-pointer block group hover:ring-2 hover:ring-[#5ec6ff] z-20 pointer-events-auto"
                 style={{
                   width: `${roomWidth}px`,
                   padding: "0 5vw",

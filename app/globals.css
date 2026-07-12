@@ -361,9 +361,9 @@
   background: #5ec6ff;
 }
 
-/* Smooth scroll for the whole page */
-html {
-  scroll-behavior: smooth;
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ═══════════════════════════════════════════════
@@ -401,3 +401,13 @@ html {
   from { opacity: 1; transform: translateZ(0) rotateX(0) rotateY(0); }
   to { opacity: 0; transform: var(--transform-to); }
 }
+
+/* 3D Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+

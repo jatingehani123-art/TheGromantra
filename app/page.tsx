@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "GROMANTRA — Digital Growth & Signal Architecture Agency",
   description: "We engineer high-performance growth systems, technical SEO architectures, and brand ecosystems that compound value over time. Direct operator access.",
   keywords: ["digital marketing agency", "growth marketing", "technical SEO agency", "performance marketing", "branding and web development"],
+  alternates: { canonical: "https://thegromantra.com" },
 }
 
 /* ═══════════════════════════════════════════════
@@ -36,7 +37,9 @@ export default function Home() {
         <Navbar />
         <div className="pt-16">
           <HeroSection />
-          <FeaturesSection />
+          <div id="features">
+            <FeaturesSection />
+          </div>
           <ServicesSection />
           <DistortionClockSection />
           <SignalBoardSection />

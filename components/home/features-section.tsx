@@ -124,6 +124,7 @@ export default function FeaturesSection() {
 
   return (
     <section
+      id="features"
       ref={sectionRef}
       className="relative bg-black overflow-hidden"
       style={{ padding: "160px 5vw" }}

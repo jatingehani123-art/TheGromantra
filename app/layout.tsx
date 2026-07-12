@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
+import Script from "next/script"
 import { Analytics } from "@vercel/analytics/next"
 import { Space_Grotesk, Inter, JetBrains_Mono, Press_Start_2P } from "next/font/google"
 import { ReactLenis } from "@/lib/lenis-provider"
@@ -37,11 +38,12 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://thegromantra.com"),
   title: "GROMANTRA — Digital Signal Architecture",
   description:
     "We don't make campaigns. We architect signals. Digital marketing, brand architecture, and growth systems for ambitious brands.",
   keywords: ["digital marketing", "signal architecture", "branding", "SEO", "performance marketing", "web development"],
-  generator: "v0.app",
+  generator: "Next.js",
   openGraph: {
     title: "GROMANTRA — Digital Signal Architecture",
     description:
@@ -84,10 +86,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} ${pressStart2P.variable} font-sans antialiased bg-black`}
-        suppressHydrationWarning
       >
         <ReactLenis root>
           <SiteLoader>
@@ -95,6 +96,56 @@ export default function RootLayout({
             <div className="grain-overlay" aria-hidden="true" />
             {/* Global scanline overlay */}
             <div className="scanline-overlay" aria-hidden="true" />
+            {/* JSON-LD Structured Data — Organization + WebSite */}
+            <Script
+              id="json-ld-organization"
+              type="application/ld+json"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@graph": [
+                    {
+                      "@type": "Organization",
+                      "@id": "https://thegromantra.com/#organization",
+                      "name": "GROMANTRA",
+                      "url": "https://thegromantra.com",
+                      "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://thegromantra.com/logo.png"
+                      },
+                      "sameAs": [
+                        "https://www.instagram.com/gromantraa?igsh=MXA5NnUzbGRqaWVmcA==",
+                        "https://www.linkedin.com/in/the-gromantra",
+                        "https://x.com/thegromantra"
+                      ],
+                      "description": "Digital signal architecture agency specializing in SEO, performance marketing, web development, social media, and brand identity systems.",
+                      "founder": {
+                        "@type": "Person",
+                        "name": "Jatin Gehani",
+                        "jobTitle": "Founder & System Architect"
+                      },
+                      "foundingDate": "2021",
+                      "contactPoint": {
+                        "@type": "ContactPoint",
+                        "contactType": "customer service",
+                        "email": "gromantra0957@gmail.com",
+                        "availableLanguage": ["English", "Hindi"]
+                      }
+                    },
+                    {
+                      "@type": "WebSite",
+                      "@id": "https://thegromantra.com/#website",
+                      "url": "https://thegromantra.com",
+                      "name": "GROMANTRA",
+                      "publisher": {
+                        "@id": "https://thegromantra.com/#organization"
+                      }
+                    }
+                  ]
+                })
+              }}
+            />
             {children}
             <Analytics />
           </SiteLoader>

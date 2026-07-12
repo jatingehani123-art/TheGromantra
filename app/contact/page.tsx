@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Contact GROMANTRA | Secure Communications Channel",
   description: "Get in touch with Jatin Gehani, founder and system architect of GROMANTRA. Launch custom growth systems and digital signals for your business.",
   keywords: ["contact GROMANTRA", "Jatin Gehani email", "digital marketing services contact", "start growth marketing project"],
+  alternates: { canonical: "https://thegromantra.com/contact" },
 }
 
 export default function ContactPage() {
@@ -54,7 +55,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-[rgba(255,255,255,0.5)] font-mono text-[10px] mb-1">EMAIL</p>
-                      <a href="mailto:hello@gromantra.com" className="text-white hover:text-[#5EC6FF] transition-colors">hello@gromantra.com</a>
+                      <a href="mailto:gromantra0957@gmail.com" className="text-white hover:text-[#5EC6FF] transition-colors">gromantra0957@gmail.com</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -63,7 +64,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-[rgba(255,255,255,0.5)] font-mono text-[10px] mb-1">PHONE</p>
-                      <a href="tel:+15551234567" className="text-white hover:text-[#5EC6FF] transition-colors">+1 (555) 123-4567</a>
+                      <a href="tel:+919983959625" className="text-white hover:text-[#5EC6FF] transition-colors">+91 99839 59625</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -72,7 +73,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-[rgba(255,255,255,0.5)] font-mono text-[10px] mb-1">HQ</p>
-                      <p className="text-white">Global Remote<br/><span className="text-[rgba(255,255,255,0.5)] text-sm">Operator Active Worldwide</span></p>
+                      <p className="text-white">17-A Kailash Nagar<br/><span className="text-[rgba(255,255,255,0.5)] text-sm">Near Kalaji Goraji Chauraha, Udaipur<br/>Rajasthan, India</span></p>
                     </div>
                   </div>
                 </div>
@@ -94,9 +95,9 @@ export default function ContactPage() {
                 </h3>
                 <div className="flex gap-4">
                   {[
-                    { Icon: Twitter, href: "https://twitter.com" },
-                    { Icon: Linkedin, href: "https://linkedin.com" },
-                    { Icon: Instagram, href: "https://instagram.com" },
+                    { Icon: Twitter, href: "https://x.com/gromantra" },
+                    { Icon: Linkedin, href: "https://www.linkedin.com/in/the-gromantra" },
+                    { Icon: Instagram, href: "https://www.instagram.com/gromantraa?igsh=MXA5NnUzbGRqaWVmcA==" },
                   ].map(({ Icon, href }, i) => (
                     <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded bg-[#171A1F] border border-[#343C43] flex items-center justify-center text-white hover:border-[#5EC6FF] hover:text-[#5EC6FF] hover:glow-cyan transition-all">
                       <Icon className="w-4 h-4" />

@@ -4,8 +4,9 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle")
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
   const [errors, setErrors] = useState<Record<string, string>>({})
+  const [submitError, setSubmitError] = useState("")
 
   const services = [
     "SEO",
@@ -15,7 +16,7 @@ export function ContactForm() {
     "Branding (Design/Video)"
   ]
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
     
@@ -34,13 +35,36 @@ export function ContactForm() {
     }
 
     setErrors({})
+    setSubmitError("")
     setStatus("submitting")
 
-    // Mock API call
-    setTimeout(() => {
-      setStatus("success")
-      setTimeout(() => setStatus("idle"), 5000)
-    }, 1500)
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          company: formData.get("company"),
+          service: formData.get("service"),
+          message: formData.get("message"),
+        }),
+      })
+
+      if (response.ok) {
+        setStatus("success")
+        setTimeout(() => setStatus("idle"), 5000)
+      } else {
+        const data = await response.json()
+        setSubmitError(data?.error || "TRANSMISSION_FAILED")
+        setStatus("error")
+      }
+    } catch {
+      setSubmitError("NETWORK_ERROR — CHECK CONNECTION")
+      setStatus("error")
+    }
   }
 
   if (status === "success") {

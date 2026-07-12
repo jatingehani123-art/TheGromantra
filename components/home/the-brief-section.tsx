@@ -38,13 +38,33 @@ export default function TheBriefSection() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (formState !== "idle") return
     setFormState("sending")
-    setTimeout(() => {
-      setFormState("sent")
-    }, 800)
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          building: formData.building,
+          timeline: formData.timeline,
+          // source field so we can distinguish in email
+          message: `[The Brief Form]\nCompany: ${formData.company}\nBuilding: ${formData.building}\nTimeline: ${formData.timeline}`,
+        }),
+      })
+      if (response.ok) {
+        setFormState("sent")
+      } else {
+        setFormState("idle")
+      }
+    } catch {
+      setFormState("idle")
+    }
   }
 
   const inputStyle = {
@@ -304,17 +324,7 @@ export default function TheBriefSection() {
         )}
       </div>
 
-      <style jsx>{`
-        @keyframes fadeSlideUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        input::placeholder, textarea::placeholder {
-          color: rgba(160, 160, 176, 0.4);
-          font-family: 'Space Mono', monospace;
-          font-size: 14px;
-        }
-      `}</style>
+
     </section>
   )
 }

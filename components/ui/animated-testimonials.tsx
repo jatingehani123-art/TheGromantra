@@ -39,13 +39,6 @@ export const AnimatedTestimonials = ({
     }
   }, []);
 
-  // Focus the container on mount for immediate keyboard usage
-  React.useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.focus();
-    }
-  }, []);
-
   const [active, setActive] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);

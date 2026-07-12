@@ -1,8 +1,10 @@
 import type { Metadata } from "next"
 import { HeroScene } from "@/components/about/HeroScene"
 import { TerminalIntro } from "@/components/about/TerminalIntro"
+import { OriginTimeline } from "@/components/about/OriginTimeline"
 import { OperatorSection } from "@/components/about/OperatorSection"
 import { NeuralNetwork } from "@/components/about/NeuralNetwork"
+import { ValuesCubes } from "@/components/about/ValuesCubes"
 import { WhyGromantra } from "@/components/about/WhyGromantra"
 import { FinalCTA } from "@/components/about/FinalCTA"
 import Navbar from "@/components/navbar"
@@ -12,6 +14,7 @@ export const metadata: Metadata = {
   title: "About Jatin Gehani & GROMANTRA | Digital Signal Architecture",
   description: "Learn about GROMANTRA's solo operator model founded by Jatin Gehani. High-performance engineering, automated technical SEO, and data-driven ad systems.",
   keywords: ["Jatin Gehani", "GROMANTRA founder", "digital marketing consultant", "growth engineering", "solo operator marketing"],
+  alternates: { canonical: "https://thegromantra.com/about" },
 }
 
 export default function AboutPage() {
@@ -25,16 +28,22 @@ export default function AboutPage() {
       {/* 2. Introduction - Terminal SEO Log */}
       <TerminalIntro />
       
-      {/* 3. The Operator - Founder Holo-Deck */}
+      {/* 3. The Origin - Interactive Growth Timeline */}
+      <OriginTimeline />
+      
+      {/* 4. The Operator - Founder Holo-Deck */}
       <OperatorSection />
       
-      {/* 4. The Engine - Capability Network */}
+      {/* 5. The Engine - Capability Network */}
       <NeuralNetwork />
       
-      {/* 5. Why Gromantra - VS Duel Arena */}
+      {/* 6. Core Directives - 3D Values Cubes */}
+      <ValuesCubes />
+      
+      {/* 7. Why Gromantra - VS Duel Arena */}
       <WhyGromantra />
       
-      {/* 6. Final CTA - Launch Sequence */}
+      {/* 8. Final CTA - Launch Sequence */}
       <FinalCTA />
       
       <Footer />

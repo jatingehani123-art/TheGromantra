@@ -49,7 +49,7 @@ export function ValuesCubes() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: val.delay }}
-                className="relative h-64 md:h-80 w-full group cursor-pointer perspective-[1000px]"
+                className="relative h-64 md:h-80 w-full group cursor-pointer perspective-1000"
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => setHoveredIndex(isHovered ? null : i)}

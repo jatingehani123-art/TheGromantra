@@ -27,7 +27,7 @@ export const POSTS_DATA: Record<string, BlogPost> = {
     slug: "architecting-growth-systems",
     title: "Why You Need a Growth System, Not Just Campaigns",
     excerpt: "Campaigns turn off when you stop spending. Growth systems compound over time. Here's how to build the infrastructure that scales your brand indefinitely.",
-    date: "OCT 12, 2024",
+    date: "2024-10-12",
     category: "Strategy & Systems",
     readTime: "7 MIN READ",
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
@@ -35,7 +35,7 @@ export const POSTS_DATA: Record<string, BlogPost> = {
       name: "Jatin Gehani",
       role: "Founder & System Architect",
       bio: "Jatin Gehani is the founder of GROMANTRA, specializing in technical growth infrastructures, automation systems, and high-performance acquisition models.",
-      avatar: "/jatin.png"
+      avatar: "/jatin.jpeg"
     },
     content: [
       {
@@ -106,7 +106,7 @@ export const POSTS_DATA: Record<string, BlogPost> = {
     slug: "performance-marketing-2024",
     title: "Performance Marketing in an AI-First World",
     excerpt: "As ad platforms shift towards automated bidding and AI generation, the real edge is in data architecture and creative velocity.",
-    date: "OCT 28, 2024",
+    date: "2024-10-28",
     category: "Performance Marketing",
     readTime: "6 MIN READ",
     imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80",
@@ -114,7 +114,7 @@ export const POSTS_DATA: Record<string, BlogPost> = {
       name: "Jatin Gehani",
       role: "Founder & System Architect",
       bio: "Jatin Gehani is the founder of GROMANTRA, specializing in technical growth infrastructures, automation systems, and high-performance acquisition models.",
-      avatar: "/jatin.png"
+      avatar: "/jatin.jpeg"
     },
     content: [
       {
@@ -180,7 +180,7 @@ export const POSTS_DATA: Record<string, BlogPost> = {
     slug: "seo-technical-foundations",
     title: "Technical SEO: Building The Digital Signal",
     excerpt: "Content is king, but infrastructure is the kingdom. If search engines can't crawl your digital architecture, your content doesn't exist.",
-    date: "NOV 05, 2024",
+    date: "2024-11-05",
     category: "SEO",
     readTime: "8 MIN READ",
     imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80",
@@ -188,7 +188,7 @@ export const POSTS_DATA: Record<string, BlogPost> = {
       name: "Jatin Gehani",
       role: "Founder & System Architect",
       bio: "Jatin Gehani is the founder of GROMANTRA, specializing in technical growth infrastructures, automation systems, and high-performance acquisition models.",
-      avatar: "/jatin.png"
+      avatar: "/jatin.jpeg"
     },
     content: [
       {
@@ -258,7 +258,7 @@ export const POSTS_DATA: Record<string, BlogPost> = {
     slug: "brand-identity-scale",
     title: "Brand Identity That Moves: Designing For Scale",
     excerpt: "Static logos are dead. Modern brand identities must be kinetic, responsive, and designed specifically for digital ecosystems.",
-    date: "NOV 18, 2024",
+    date: "2024-11-18",
     category: "Branding",
     readTime: "6 MIN READ",
     imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80",
@@ -266,7 +266,7 @@ export const POSTS_DATA: Record<string, BlogPost> = {
       name: "Jatin Gehani",
       role: "Founder & System Architect",
       bio: "Jatin Gehani is the founder of GROMANTRA, specializing in technical growth infrastructures, automation systems, and high-performance acquisition models.",
-      avatar: "/jatin.png"
+      avatar: "/jatin.jpeg"
     },
     content: [
       {

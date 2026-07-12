@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Script from "next/script"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { BlogPost } from "@/lib/blog-data"
@@ -12,8 +13,33 @@ export default function BlogDetailClient({
   post: BlogPost; 
   relatedPosts: BlogPost[] 
 }) {
+  const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+  const formatBlogDate = (dateStr: string) => {
+    const parts = dateStr.split("-");
+    if (parts.length !== 3) return dateStr;
+    const month = months[parseInt(parts[1], 10) - 1] || "";
+    return `${month} ${parts[2]}, ${parts[0]}`;
+  };
+
   return (
     <main className="bg-black min-h-screen flex flex-col relative overflow-hidden">
+      {/* Breadcrumb JSON-LD */}
+      <Script
+        id="breadcrumb-blog"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://thegromantra.com" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: "https://thegromantra.com/blog" },
+              { "@type": "ListItem", position: 3, name: post.title, item: `https://thegromantra.com/blog/${post.slug}` },
+            ],
+          }),
+        }}
+      />
       {/* Background ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#1D4ED8] rounded-full blur-[150px] opacity-10 -z-10 pointer-events-none" />
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay -z-10 pointer-events-none" />
@@ -22,13 +48,20 @@ export default function BlogDetailClient({
       
       <article className="flex-1 pt-40 pb-24 relative z-10">
         <div className="max-w-[680px] mx-auto px-4 sm:px-6">
-          
-          {/* Meta Row */}
+
+          {/* Breadcrumb UI */}
+          <nav className="flex items-center gap-2 mb-8 font-mono text-[10px] uppercase tracking-widest text-[rgba(255,255,255,0.5)]" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-[#5EC6FF] transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/blog" className="hover:text-[#5EC6FF] transition-colors">Blog</Link>
+            <span>/</span>
+            <span className="text-[#5EC6FF] truncate max-w-[200px]">{post.title}</span>
+          </nav>
           <div className="flex items-center gap-4 mb-8 font-mono text-[10px] md:text-xs uppercase tracking-widest">
             <span className="text-[#5EC6FF] border border-[#5EC6FF]/30 bg-[#5EC6FF]/10 px-2 py-1 rounded">
               {post.category}
             </span>
-            <span className="text-[rgba(255,255,255,0.5)]">{post.date}</span>
+            <span className="text-[rgba(255,255,255,0.5)]">{formatBlogDate(post.date)}</span>
             <span className="text-[rgba(255,255,255,0.5)]">· {post.readTime}</span>
           </div>
 
@@ -106,7 +139,12 @@ export default function BlogDetailClient({
               }}
             />
             <div className="text-center sm:text-left select-text">
-              <h4 className="text-white font-display font-bold text-lg mb-1 select-text">Written By {post.author.name}</h4>
+              <h4 className="text-white font-display font-bold text-lg mb-1 select-text">
+                Written By{" "}
+                <Link href="/about/jatin-gehani" className="hover:text-[#5EC6FF] transition-colors">
+                  {post.author.name}
+                </Link>
+              </h4>
               <p className="text-[#5EC6FF] font-mono text-xs uppercase mb-2 select-text">{post.author.role}</p>
               <p className="text-sm text-[rgba(255,255,255,0.6)] leading-relaxed select-text">{post.author.bio}</p>
             </div>

@@ -5,7 +5,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://thegromantra.com"
 
   // 1. Static site routes
-  const routes = ["", "/about", "/contact", "/services", "/blog"].map((route) => ({
+  const routes = [
+    "",
+    "/about",
+    "/about/jatin-gehani",
+    "/contact",
+    "/services",
+    "/blog",
+    "/privacy-policy",
+    "/privacy",
+    "/terms",
+    "/case-studies",
+    "/pricing",
+  ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,

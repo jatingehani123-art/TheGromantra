@@ -146,6 +146,7 @@ export function HeroScene() {
               animate={{ opacity: [0, 1, 0] }} 
               transition={{ repeat: Infinity, duration: 2, delay: 3 }}
               className="absolute inset-0 text-[#5EC6FF] opacity-0 mix-blend-screen"
+              aria-hidden="true"
             >
               It's Engineered.
             </motion.span>

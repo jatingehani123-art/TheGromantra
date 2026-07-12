@@ -4,7 +4,6 @@
 User-agent: *
 Allow: /
 Disallow: /_next/
-Disallow: /static/
 
 # 2. Allow AI search assistant crawlers for citation readiness (GEO)
 User-agent: GPTBot
