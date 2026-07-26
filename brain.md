@@ -1,4 +1,4 @@
-﻿# 🧠 GROMANTRA — Project Brain
+# 🧠 GROMANTRA — Project Brain
 
 > **Always read this file before making any changes.**
 > This is the single source of truth for project structure, design system, known quirks, and coding rules.
@@ -239,7 +239,7 @@ Tailwind classes: `font-display`, `font-body-mono`, `font-pixel`
 
 All posts by Jatin Gehani. Add new posts to `POSTS_DATA` record AND `POSTS` array in `app/blog/page.tsx`.
 
-Existing slugs: `architecting-growth-systems`, `performance-marketing-2024`, `seo-technical-foundations`, `brand-identity-scale`
+Existing slugs: `generative-engine-optimization-geo-playbook`, `server-side-data-architecture-paid-media`, `high-conversion-web-engineering-inp-cac`, `brand-identity-scale`, `seo-technical-foundations`, `performance-marketing-2024`, `architecting-growth-systems`
 
 BlogBlock types: `"paragraph"` | `"heading2"` | `"heading3"` | `"list"` | `"quote"`
 

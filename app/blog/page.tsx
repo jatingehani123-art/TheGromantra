@@ -12,18 +12,32 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
-    slug: "architecting-growth-systems",
-    title: "Why You Need a Growth System, Not Just Campaigns",
-    excerpt: "Campaigns turn off when you stop spending. Growth systems compound over time. Here's how to build the infrastructure that scales your brand indefinitely.",
-    date: "2024-10-12",
-    category: "Strategy & Systems"
+    slug: "high-conversion-web-engineering-inp-cac",
+    title: "High-Conversion Web Engineering: How INP & Speed Control CAC",
+    excerpt: "A slow page is an expensive page. Learn how optimizing INP, Core Web Vitals, and server-side rendering directly reduces Google & Meta ad costs while turning traffic into qualified pipeline.",
+    date: "2025-02-18",
+    category: "Web Development"
   },
   {
-    slug: "performance-marketing-2024",
-    title: "Performance Marketing in an AI-First World",
-    excerpt: "As ad platforms shift towards automated bidding and AI generation, the real edge is in data architecture and creative velocity.",
-    date: "2024-10-28",
+    slug: "server-side-data-architecture-paid-media",
+    title: "Server-Side Data Architecture: Scaling Paid Media Beyond Cookies",
+    excerpt: "Client-side pixel tracking is dead. Discover how server-to-server data pipelines and Conversions API (CAPI) feed AI bidding algorithms the first-party signals required to slash CPA.",
+    date: "2025-02-02",
     category: "Performance Marketing"
+  },
+  {
+    slug: "generative-engine-optimization-geo-playbook",
+    title: "Generative Engine Optimization (GEO): The 2026 Playbook for AI Search",
+    excerpt: "Search is no longer just blue links. Google AI Overviews, Perplexity, and ChatGPT now synthesize answers. Here is the technical playbook for engineering content that AI models trust and cite.",
+    date: "2025-01-15",
+    category: "SEO"
+  },
+  {
+    slug: "brand-identity-scale",
+    title: "Brand Identity That Moves: Designing For Scale",
+    excerpt: "Static logos are dead. Modern brand identities must be kinetic, responsive, and designed specifically for digital ecosystems.",
+    date: "2024-11-18",
+    category: "Branding"
   },
   {
     slug: "seo-technical-foundations",
@@ -33,11 +47,18 @@ const POSTS = [
     category: "SEO"
   },
   {
-    slug: "brand-identity-scale",
-    title: "Brand Identity That Moves: Designing For Scale",
-    excerpt: "Static logos are dead. Modern brand identities must be kinetic, responsive, and designed specifically for digital ecosystems.",
-    date: "2024-11-18",
-    category: "Branding"
+    slug: "performance-marketing-2024",
+    title: "Performance Marketing in an AI-First World",
+    excerpt: "As ad platforms shift towards automated bidding and AI generation, the real edge is in data architecture and creative velocity.",
+    date: "2024-10-28",
+    category: "Performance Marketing"
+  },
+  {
+    slug: "architecting-growth-systems",
+    title: "Why You Need a Growth System, Not Just Campaigns",
+    excerpt: "Campaigns turn off when you stop spending. Growth systems compound over time. Here's how to build the infrastructure that scales your brand indefinitely.",
+    date: "2024-10-12",
+    category: "Strategy & Systems"
   }
 ]
 
