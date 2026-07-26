@@ -63,18 +63,20 @@ function Scene() {
   })
 
   return (
-    <group ref={groupRef}>
-      <Stars radius={50} depth={50} count={2000} factor={4} saturation={0} fade speed={1} />
-      <DataGraph />
-      <ambientLight intensity={0.5} />
+    <>
+      <group ref={groupRef}>
+        <Stars radius={50} depth={50} count={2000} factor={4} saturation={0} fade speed={1} />
+        <DataGraph />
+        <ambientLight intensity={0.5} />
+      </group>
       
-      {/* Postprocessing Pipeline */}
+      {/* Postprocessing Pipeline — must be sibling of scene group, not nested inside */}
       <EffectComposer>
         <Bloom luminanceThreshold={0.2} luminanceSmoothing={0.9} intensity={2.0} />
         <Scanline density={1.5} opacity={0.2} blendFunction={BlendFunction.OVERLAY} />
         <ChromaticAberration offset={new THREE.Vector2(0.002, 0.002)} blendFunction={BlendFunction.NORMAL} />
       </EffectComposer>
-    </group>
+    </>
   )
 }
 
