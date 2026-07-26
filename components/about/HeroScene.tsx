@@ -140,7 +140,7 @@ export function HeroScene() {
           className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white font-display mb-6 uppercase text-balance"
         >
           Growth Is Not Luck. <br />
-          <span className="inline-block text-transparent bg-clip-text gradient-primary glow-text relative">
+          <span className="inline-block relative" style={{ background: 'linear-gradient(to right, #1d4ed8, #3b82f6, #5ec6ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
             It's Engineered.
             <motion.span 
               animate={{ opacity: [0, 1, 0] }} 

@@ -115,7 +115,7 @@ export function WhyGromantra() {
             className="text-center mt-32"
           >
             <h3 className="text-2xl md:text-4xl font-display font-bold text-white uppercase tracking-wider">
-              Same race. <span className="inline-block text-transparent bg-clip-text gradient-primary glow-text">Different machine.</span>
+              Same race. <span className="inline-block" style={{ background: 'linear-gradient(to right, #1d4ed8, #3b82f6, #5ec6ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Different machine.</span>
             </h3>
           </motion.div>
         </div>

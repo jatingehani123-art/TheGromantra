@@ -26,7 +26,7 @@ export function FinalCTA() {
           className="text-5xl md:text-7xl font-display font-bold text-white mb-6 uppercase tracking-tight"
         >
           Ready To Enter <br />
-          <span className="inline-block text-transparent bg-clip-text gradient-primary glow-text">The Fast Lane?</span>
+          <span className="inline-block" style={{ background: 'linear-gradient(to right, #1d4ed8, #3b82f6, #5ec6ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>The Fast Lane?</span>
         </motion.h2>
         
         <motion.p 
