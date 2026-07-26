@@ -23,15 +23,9 @@ export function ReCAPTCHA({ onVerify, onExpired }: ReCAPTCHAProps) {
   const [fallbackChecked, setFallbackChecked] = useState(false)
   const [useFallback, setUseFallback] = useState(false)
 
-  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LeLKGYtAAAAABillTecEEWdYHvT-N2BgBtQIYgc"
 
   useEffect(() => {
-    // If no custom env key is passed, use sleek custom human verification component
-    if (!siteKey) {
-      setUseFallback(true)
-      return
-    }
-
     if (window.grecaptcha && window.grecaptcha.render) {
       setLoaded(true)
     } else {
@@ -39,7 +33,7 @@ export function ReCAPTCHA({ onVerify, onExpired }: ReCAPTCHAProps) {
         setLoaded(true)
       }
     }
-  }, [siteKey])
+  }, [])
 
   useEffect(() => {
     if (!useFallback && loaded && containerRef.current && widgetIdRef.current === null && window.grecaptcha?.render) {

@@ -6,7 +6,7 @@ export async function POST(request: Request) {
     const { name, email, company, service, message, building, timeline, recaptchaToken } = body
 
     // Verify reCAPTCHA token if Google token present
-    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY || "6LcyHGYtAAAAALF4k-_ICTeC5N4SfOHAqEInhLsQ"
+    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY || "6LeLKGYtAAAAAEecVQMbucteUrJMXXXdvoJr4pVE"
     if (recaptchaToken && !recaptchaToken.startsWith("human-verification-verified-token-")) {
       try {
         const verifyRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
