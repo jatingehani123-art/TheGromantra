@@ -271,6 +271,7 @@ BlogBlock types: `"paragraph"` | `"heading2"` | `"heading3"` | `"list"` | `"quot
 ## 🔑 SEO Architecture
 
 - `metadataBase`: `https://thegromantra.com`
+- Google Analytics 4 (GA4): `G-6PHGBC72KC` (gtag.js in app/layout.tsx)
 - OG image: `/og-image.png` (1200×630)
 - JSON-LD schemas present: Organization, WebSite, Service, Article, Person, FAQPage, BreadcrumbList
 - All pages have canonical URLs

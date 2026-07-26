@@ -93,8 +93,23 @@ export default function RootLayout({
           <SiteLoader>
             {/* Global grain overlay */}
             <div className="grain-overlay" aria-hidden="true" />
-            {/* Global scanline overlay */}
-            <div className="scanline-overlay" aria-hidden="true" />
+            {/* Google Analytics (gtag.js) */}
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-6PHGBC72KC"
+              strategy="afterInteractive"
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-6PHGBC72KC');
+                `,
+              }}
+            />
             {/* JSON-LD Structured Data — Organization + WebSite */}
             <Script
               id="json-ld-organization"
