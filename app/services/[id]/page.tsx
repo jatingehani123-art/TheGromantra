@@ -134,29 +134,29 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
   const metaMap: Record<string, { title: string; description: string; keywords: string[] }> = {
     "seo": {
-      title: "Technical SEO & Organic Search Architectures | GROMANTRA",
-      description: "Automated, high-intent organic search frameworks. We build crawlable systems that rank in Google search, AI Overviews, and LLMs.",
-      keywords: ["Technical SEO", "Organic Search Architecture", "GEO", "Core Web Vitals", "SEO Audit"]
+      title: "Technical SEO Services in Udaipur & Rajasthan | GROMANTRA",
+      description: "Premier SEO agency in Udaipur, Rajasthan. We build technical SEO architectures that rank on Google search, Google AI Overviews, and AI search engines.",
+      keywords: ["SEO services Udaipur", "SEO company in Udaipur", "technical SEO agency Rajasthan", "organic search optimization Udaipur", "GEO AI search"]
     },
     "social-media": {
-      title: "Social Media & Community Content Frameworks | GROMANTRA",
-      description: "Compounding organic social systems and short-form video generation that build engaged customer bases and organic distribution channels.",
-      keywords: ["Social Media Marketing", "Content Strategy", "Short-form Video", "Community Building"]
+      title: "Social Media Marketing Agency in Udaipur, Rajasthan | GROMANTRA",
+      description: "Full-service social media management and short-form video generation for brands in Udaipur, Rajasthan, and across India.",
+      keywords: ["social media marketing Udaipur", "social media agency Rajasthan", "Instagram marketing Udaipur", "content strategy Rajasthan"]
     },
     "web-development": {
-      title: "Conversion-Optimized Custom Web Engineering | GROMANTRA",
-      description: "Lightning-fast, highly responsive websites built using Next.js and React. Engineered for maximum speed, security, and conversion rate optimization.",
-      keywords: ["Web Development", "Next.js Web Developer", "Page Speed Optimization", "Conversion Rate Optimization"]
+      title: "Custom Web Development Company in Udaipur, Rajasthan | GROMANTRA",
+      description: "Lightning-fast, conversion-optimized Next.js web development in Udaipur, Rajasthan. High-speed landing pages, web apps, and Core Web Vitals optimization.",
+      keywords: ["web development company Udaipur", "website design Udaipur", "Next.js developer Rajasthan", "web agency Udaipur", "custom website design"]
     },
     "performance-marketing": {
-      title: "Performance Marketing & Paid Acquisition Systems | GROMANTRA",
-      description: "Data-driven ad campaigns designed for immediate ROI and aggressive scaling. Search, display, social, and remarketing systems.",
-      keywords: ["Performance Marketing", "Google Ads Specialist", "Meta Ads", "Paid Social Advertising"]
+      title: "Performance Marketing & PPC Agency in Udaipur, Rajasthan | GROMANTRA",
+      description: "ROI-driven Google Ads & Meta Ads management in Udaipur, Rajasthan. Precision targeting, server-side tracking, and paid media scaling.",
+      keywords: ["performance marketing agency Udaipur", "Google Ads agency Udaipur", "PPC company Rajasthan", "paid social ads Udaipur"]
     },
     "branding": {
-      title: "Kinetic Brand Identity & Digital Asset Design | GROMANTRA",
-      description: "Brand guidelines, logos, motion graphics, and high-retention video assets engineered specifically for modern digital ecosystems.",
-      keywords: ["Brand Identity Design", "Logo Design", "Video Editing", "Motion Graphics"]
+      title: "Brand Identity Design & Video Agency in Udaipur, Rajasthan | GROMANTRA",
+      description: "Kinetic brand identity design, logo systems, video editing, and visual asset design for businesses in Udaipur, Rajasthan, and globally.",
+      keywords: ["branding agency Udaipur", "logo designer Udaipur", "brand identity design Rajasthan", "video editing services Udaipur"]
     }
   }
 

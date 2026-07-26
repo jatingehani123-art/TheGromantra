@@ -6,14 +6,21 @@ import Footer from "@/components/footer"
 import { POSTS_DATA } from "@/lib/blog-data"
 
 export const metadata: Metadata = {
-  title: "Jatin Gehani - Founder & System Architect | GROMANTRA",
+  title: "Jatin Gehani - Founder & System Architect in Udaipur, Rajasthan | GROMANTRA",
   description:
-    "Jatin Gehani is the founder and system architect of GROMANTRA, specialising in technical growth infrastructures, automated SEO, high-performance acquisition models, and brand identity systems.",
-  keywords: ["Jatin Gehani", "GROMANTRA founder", "digital marketing consultant", "technical SEO expert", "growth architect India"],
+    "Jatin Gehani is the founder and system architect of GROMANTRA in Udaipur, Rajasthan, specializing in technical SEO, PPC paid media, custom web development, and growth architectures.",
+  keywords: [
+    "Jatin Gehani",
+    "GROMANTRA founder",
+    "digital marketing consultant Udaipur",
+    "SEO expert Udaipur",
+    "digital marketing Udaipur Rajasthan",
+    "growth architect Rajasthan"
+  ],
   alternates: { canonical: "https://thegromantra.com/about/jatin-gehani" },
   openGraph: {
-    title: "Jatin Gehani - Founder & System Architect | GROMANTRA",
-    description: "Founder of GROMANTRA. Signal architect. Growth engineer.",
+    title: "Jatin Gehani - Founder & System Architect in Udaipur, Rajasthan | GROMANTRA",
+    description: "Founder of GROMANTRA in Udaipur, Rajasthan. Technical SEO & growth architect.",
     images: [{ url: "/jatin.jpeg", width: 800, height: 800, alt: "Jatin Gehani" }],
     type: "profile",
   },
@@ -102,12 +109,12 @@ export default function JatinGehaniPage() {
               <h1 className="text-4xl sm:text-5xl font-display font-bold text-white uppercase tracking-wide mb-4">
                 Jatin Gehani
               </h1>
-              <p className="text-[#5EC6FF] font-mono text-sm mb-6">Founder &amp; System Architect &mdash; GROMANTRA</p>
+              <p className="text-[#5EC6FF] font-mono text-sm mb-6">Founder &amp; System Architect &mdash; GROMANTRA (Udaipur, Rajasthan)</p>
               <p className="text-[rgba(255,255,255,0.75)] leading-relaxed mb-6 max-w-xl">
-                Jatin Gehani is the founder of GROMANTRA and the primary architect behind its client growth systems. Specialising in technical SEO infrastructures, paid acquisition frameworks, and brand identity ecosystems, he builds marketing engines that compound in value over time &mdash; not campaigns that evaporate the moment the budget runs dry.
+                Jatin Gehani is the founder of GROMANTRA in Udaipur, Rajasthan, and the primary architect behind its client growth systems. Specialising in <Link href="/services/seo" className="text-[#5EC6FF] underline hover:text-white transition-colors">technical SEO infrastructures</Link>, <Link href="/services/performance-marketing" className="text-[#5EC6FF] underline hover:text-white transition-colors">paid acquisition frameworks</Link>, and <Link href="/services/branding" className="text-[#5EC6FF] underline hover:text-white transition-colors">brand identity ecosystems</Link>, he builds marketing engines that compound in value over time &mdash; not campaigns that evaporate the moment the budget runs dry.
               </p>
               <p className="text-[rgba(255,255,255,0.65)] leading-relaxed mb-8 max-w-xl">
-                Since 2021, GROMANTRA has worked with brands across India and globally, delivering measurable growth in organic traffic, acquisition efficiency, and digital brand equity. Jatin&apos;s approach treats marketing as an engineering discipline &mdash; systems-first, data-driven, and built for permanence.
+                Since 2021, GROMANTRA has empowered businesses across Udaipur, Rajasthan, Jaipur, and globally, delivering measurable growth in organic traffic, customer acquisition efficiency, and digital brand equity through custom <Link href="/services/web-development" className="text-[#5EC6FF] underline hover:text-white transition-colors">web engineering</Link>. Jatin&apos;s approach treats marketing as an engineering discipline &mdash; systems-first, data-driven, and built for permanence.
               </p>
 
               {/* Credentials */}

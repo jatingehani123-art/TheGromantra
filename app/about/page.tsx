@@ -11,9 +11,9 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "About Jatin Gehani & GROMANTRA | Digital Signal Architecture",
-  description: "Learn about GROMANTRA's solo operator model founded by Jatin Gehani. High-performance engineering, automated technical SEO, and data-driven ad systems.",
-  keywords: ["Jatin Gehani", "GROMANTRA founder", "digital marketing consultant", "growth engineering", "solo operator marketing"],
+  title: "About Jatin Gehani & GROMANTRA | Digital Marketing Agency in Udaipur, Rajasthan",
+  description: "Learn about GROMANTRA, a premier digital marketing agency in Udaipur, Rajasthan founded by Jatin Gehani. High-performance growth engineering, technical SEO, and data-driven ad systems.",
+  keywords: ["Jatin Gehani Udaipur", "GROMANTRA founder", "digital marketing agency Udaipur", "SEO company Rajasthan", "growth agency Udaipur", "marketing consultant Rajasthan"],
   alternates: { canonical: "https://thegromantra.com/about" },
 }
 

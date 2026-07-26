@@ -4,8 +4,9 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Pricing | GROMANTRA",
-  description: "Transparent pricing for GROMANTRA growth systems. Custom retainers and project-based engagements. Details coming soon.",
+  title: "Digital Marketing Packages & Pricing in Udaipur, Rajasthan | GROMANTRA",
+  description: "Transparent pricing protocols and custom growth retainers for SEO, web development, PPC, and social media in Udaipur, Rajasthan. Get a custom quote from GROMANTRA.",
+  keywords: ["digital marketing pricing Udaipur", "SEO package cost Udaipur", "web development price Rajasthan", "PPC retainer Udaipur", "marketing agency quote Rajasthan"],
   alternates: { canonical: "https://thegromantra.com/pricing" },
 }
 

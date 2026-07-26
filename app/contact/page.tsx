@@ -5,9 +5,9 @@ import { ContactForm } from "@/components/ui/contact-form"
 import { Mail, Phone, MapPin, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Contact GROMANTRA | Secure Communications Channel",
-  description: "Get in touch with Jatin Gehani, founder and system architect of GROMANTRA. Launch custom growth systems and digital signals for your business.",
-  keywords: ["contact GROMANTRA", "Jatin Gehani email", "digital marketing services contact", "start growth marketing project"],
+  title: "Contact GROMANTRA | Digital Marketing Agency in Udaipur, Rajasthan",
+  description: "Get in touch with Jatin Gehani at GROMANTRA in Udaipur, Rajasthan. Launch custom technical SEO, PPC ad campaigns, web development, and brand growth systems.",
+  keywords: ["contact GROMANTRA", "digital marketing agency Udaipur contact", "Jatin Gehani Udaipur", "hire SEO agency Rajasthan", "start marketing campaign Udaipur"],
   alternates: { canonical: "https://thegromantra.com/contact" },
 }
 

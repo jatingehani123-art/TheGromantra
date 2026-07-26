@@ -5,9 +5,18 @@ import Footer from "@/components/footer"
 import { Target, Megaphone, Monitor, BarChart3, Palette, TerminalSquare } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Services | SEO, PPC, Web Development, Branding — GROMANTRA",
-  description: "Explore GROMANTRA's full-service digital marketing solutions: technical SEO, social media management, custom web development, performance marketing (Google Ads & Meta Ads), and brand identity design. Growth systems that scale.",
-  keywords: ["SEO services", "social media marketing agency", "custom web development", "performance marketing services", "Google Ads management", "PPC campaign management", "brand identity design", "digital marketing agency India", "conversion rate optimization", "organic traffic growth"],
+  title: "Digital Marketing Services in Udaipur & Rajasthan | SEO, PPC, Web Dev — GROMANTRA",
+  description: "Premier digital marketing services in Udaipur, Rajasthan by GROMANTRA: technical SEO audits, Meta & Google Ads PPC management, custom web development, social media strategy, and brand identity design.",
+  keywords: [
+    "digital marketing services Udaipur",
+    "SEO services Udaipur",
+    "web development Udaipur",
+    "PPC agency Rajasthan",
+    "social media marketing Udaipur",
+    "branding agency Rajasthan",
+    "digital marketing company Udaipur",
+    "best SEO agency Rajasthan"
+  ],
   alternates: { canonical: "https://thegromantra.com/services" },
 }
 

@@ -10,6 +10,7 @@
 
 - **Name**: GROMANTRA — Digital Signal Architecture Agency
 - **Owner**: Jatin Gehani (Founder & System Architect)
+- **Primary Target Region**: Udaipur, Rajasthan, India (with national & global reach)
 - **Domain**: https://thegromantra.com
 - **Repo**: https://github.com/jatingehani123-art/TheGromantra (branch: `master`)
 - **Local Path**: `c:\Users\Jatin Gehani\OneDrive\Desktop\digital-marketing-website`

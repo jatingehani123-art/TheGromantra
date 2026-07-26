@@ -39,15 +39,25 @@ export const viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thegromantra.com"),
-  title: "GROMANTRA — Digital Signal Architecture",
+  title: "GROMANTRA — Best Digital Marketing & Technical SEO Agency in Udaipur, Rajasthan",
   description:
-    "We don't make campaigns. We architect signals. Digital marketing, brand architecture, and growth systems for ambitious brands.",
-  keywords: ["digital marketing", "signal architecture", "branding", "SEO", "performance marketing", "web development"],
+    "GROMANTRA is a premier digital marketing agency in Udaipur, Rajasthan. Founded by Jatin Gehani, we architect high-performance technical SEO, Meta/Google PPC ad campaigns, custom web development, and brand growth systems.",
+  keywords: [
+    "digital marketing agency in Udaipur",
+    "best SEO company in Udaipur",
+    "digital marketing agency Rajasthan",
+    "web development company Udaipur",
+    "PPC agency Udaipur",
+    "SEO services Rajasthan",
+    "social media marketing Udaipur",
+    "Jatin Gehani GROMANTRA",
+    "growth marketing agency India"
+  ],
   generator: "Next.js",
   openGraph: {
-    title: "GROMANTRA — Digital Signal Architecture",
+    title: "GROMANTRA — Digital Marketing Agency in Udaipur, Rajasthan",
     description:
-      "Architecting digital signals for brands. SEO, social media, web development, performance marketing, branding.",
+      "Leading growth architecture & digital marketing agency in Udaipur, Rajasthan. High-intent SEO, Meta/Google Ads, custom web engineering & brand strategy.",
     url: "https://thegromantra.com",
     siteName: "GROMANTRA",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
@@ -56,9 +66,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GROMANTRA — Digital Signal Architecture",
+    title: "GROMANTRA — Digital Marketing Agency in Udaipur, Rajasthan",
     description:
-      "Architecting digital signals for brands. SEO, social media, web development, performance marketing, branding.",
+      "Leading growth architecture & digital marketing agency in Udaipur, Rajasthan. High-intent SEO, Meta/Google Ads, custom web engineering & brand strategy.",
     images: ["/og-image.png"],
   },
   icons: {
@@ -101,12 +111,19 @@ export default function RootLayout({
                         "@type": "ImageObject",
                         "url": "https://thegromantra.com/logo.png"
                       },
+                      "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Udaipur",
+                        "addressRegion": "Rajasthan",
+                        "addressCountry": "IN"
+                      },
+                      "areaServed": ["Udaipur", "Rajasthan", "India", "Global"],
                       "sameAs": [
                         "https://www.instagram.com/gromantraa?igsh=MXA5NnUzbGRqaWVmcA==",
                         "https://www.linkedin.com/in/the-gromantra",
                         "https://x.com/thegromantra"
                       ],
-                      "description": "Digital signal architecture agency specializing in SEO, performance marketing, web development, social media, and brand identity systems.",
+                      "description": "Premier digital marketing & growth engineering agency based in Udaipur, Rajasthan. Specializing in technical SEO, PPC management, web development, and social media architecture.",
                       "founder": {
                         "@type": "Person",
                         "name": "Jatin Gehani",

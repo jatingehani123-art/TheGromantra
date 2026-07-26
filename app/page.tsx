@@ -11,9 +11,9 @@ import TestimonialsSection from "@/components/home/testimonials-section"
 import TheBriefSection from "@/components/home/the-brief-section"
 
 export const metadata: Metadata = {
-  title: "GROMANTRA — Digital Growth & Signal Architecture Agency",
-  description: "We engineer high-performance growth systems, technical SEO architectures, and brand ecosystems that compound value over time. Direct operator access.",
-  keywords: ["digital marketing agency", "growth marketing", "technical SEO agency", "performance marketing", "branding and web development"],
+  title: "GROMANTRA — Top Digital Marketing & SEO Agency in Udaipur, Rajasthan",
+  description: "GROMANTRA is a premier digital marketing agency based in Udaipur, Rajasthan. We engineer high-performance technical SEO, Meta & Google ad campaigns, custom web development, and brand growth systems. Founded by Jatin Gehani.",
+  keywords: ["digital marketing agency Udaipur", "SEO company in Udaipur", "digital marketing services Rajasthan", "best marketing agency Udaipur", "web development company Udaipur", "PPC agency Rajasthan", "growth marketing India"],
   alternates: { canonical: "https://thegromantra.com" },
 }
 

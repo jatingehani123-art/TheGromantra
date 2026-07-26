@@ -6,6 +6,37 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { BlogPost } from "@/lib/blog-data"
 
+function parseContentWithLinks(text: string) {
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    const linkText = match[1];
+    const url = match[2];
+    parts.push(
+      <Link
+        key={match.index}
+        href={url}
+        className="text-[#5EC6FF] underline decoration-[#5EC6FF]/40 hover:decoration-[#5EC6FF] transition-colors font-medium"
+      >
+        {linkText}
+      </Link>
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : text;
+}
+
 export default function BlogDetailClient({ 
   post, 
   relatedPosts 
@@ -89,7 +120,7 @@ export default function BlogDetailClient({
                 case "paragraph":
                   return (
                     <p key={index} className="mb-6 font-sans text-[rgba(255,255,255,0.8)] text-base md:text-lg leading-relaxed select-text">
-                      {block.text}
+                      {parseContentWithLinks(block.text || "")}
                     </p>
                   );
                 case "heading2":
@@ -108,7 +139,7 @@ export default function BlogDetailClient({
                   return (
                     <ul key={index} className="list-disc pl-6 mb-8 text-[rgba(255,255,255,0.8)] space-y-3 font-sans select-text">
                       {block.items?.map((item, idx) => (
-                        <li key={idx} className="leading-relaxed select-text">{item}</li>
+                        <li key={idx} className="leading-relaxed select-text">{parseContentWithLinks(item)}</li>
                       ))}
                     </ul>
                   );
