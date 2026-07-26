@@ -307,11 +307,12 @@ export default function FeaturesSection() {
 
       {/* Bottom ambient glow — fades in with scroll */}
       <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full pointer-events-none"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full"
         style={{
           background: "radial-gradient(ellipse, rgba(29, 78, 216, 0.08), transparent)",
           filter: "blur(80px)",
           opacity: scrollProgress * 0.8,
+          pointerEvents: 'none',
         }}
       />
     </section>

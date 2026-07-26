@@ -70,7 +70,8 @@ export function TubelightNavbar({ items, className }: NavBarProps) {
               {isActive && (
                 <motion.div
                   layoutId="lamp"
-                  className="absolute inset-0 w-full bg-[#1d4ed8]/20 rounded-full -z-10"
+                  className="absolute inset-0 w-full bg-[#1d4ed8]/20 rounded-full"
+                  style={{ zIndex: -10 }}
                   initial={false}
                   transition={{
                     type: "spring",

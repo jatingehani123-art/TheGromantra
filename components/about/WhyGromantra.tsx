@@ -50,7 +50,7 @@ export function WhyGromantra() {
         {/* The Duel Arena */}
         <div className="relative">
           {/* Desktop Center Divider line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[#343C43] to-transparent -translate-x-1/2 -z-10 pointer-events-none" />
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[#343C43] to-transparent -translate-x-1/2" style={{ zIndex: -10, pointerEvents: 'none' }} />
 
           {/* Table Headers */}
           <div className="hidden md:flex justify-between mb-12 relative z-10 px-8">

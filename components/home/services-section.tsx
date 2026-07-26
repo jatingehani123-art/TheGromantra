@@ -229,12 +229,13 @@ export default function ServicesSection() {
 
                 {/* Room ambient glow */}
                 <div
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] rounded-full pointer-events-none"
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] rounded-full"
                   style={{
                     background: "radial-gradient(ellipse, rgba(29, 78, 216, 0.06), transparent)",
                     filter: "blur(60px)",
                     opacity: isHovered ? 1 : 0,
                     transition: "opacity 0.4s ease",
+                    pointerEvents: 'none',
                   }}
                 />
               </Link>

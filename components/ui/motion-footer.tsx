@@ -303,13 +303,14 @@ export function CinematicFooter() {
         <footer className="relative z-[100] flex min-h-[100dvh] w-full max-w-[100vw] overflow-hidden flex-col justify-between bg-black text-white">
           
           {/* Ambient Light & Grid Background */}
-          <div className="footer-aurora absolute left-1/2 top-1/2 h-[60vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-[50%] blur-[80px] pointer-events-none z-0" />
-          <div className="footer-bg-grid absolute inset-0 z-0 pointer-events-none" />
+          <div className="footer-aurora absolute left-1/2 top-1/2 h-[60vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-[50%] blur-[80px] z-0" style={{ pointerEvents: 'none' }} />
+          <div className="footer-bg-grid absolute inset-0 z-0" style={{ pointerEvents: 'none' }} />
 
           {/* Giant background text */}
           <div
             ref={giantTextRef}
-            className="footer-giant-bg-text absolute -bottom-[5vh] left-1/2 -translate-x-1/2 whitespace-nowrap z-0 pointer-events-none select-none text-[#5EC6FF]"
+            className="footer-giant-bg-text absolute -bottom-[5vh] left-1/2 -translate-x-1/2 whitespace-nowrap z-0 select-none text-[#5EC6FF]"
+            style={{ pointerEvents: 'none' }}
           >
             GROMANTRA
           </div>
