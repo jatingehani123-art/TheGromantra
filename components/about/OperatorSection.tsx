@@ -1,8 +1,9 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { TerminalSquare } from "lucide-react"
+import { TerminalSquare, ArrowRight } from "lucide-react"
 import { useRef } from "react"
+import Link from "next/link"
 
 export function OperatorSection() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -132,9 +133,17 @@ export function OperatorSection() {
           <p className="text-[#5EC6FF] font-mono text-xs uppercase tracking-[0.2em] mb-4">
             // Founder & System Architect
           </p>
-          <p className="text-[rgba(255,255,255,0.7)] text-sm max-w-md mx-auto font-sans leading-relaxed">
+          <p className="text-[rgba(255,255,255,0.7)] text-sm max-w-md mx-auto font-sans leading-relaxed mb-6">
             I don't just run campaigns; I engineer automated growth systems. My approach combines data-driven precision with aggressive execution to scale brands predictably.
           </p>
+          <Link 
+            href="/about/jatin-gehani"
+            className="inline-flex items-center gap-2 bg-[#1D4ED8]/20 hover:bg-[#1D4ED8]/40 border border-[#5EC6FF]/40 hover:border-[#5EC6FF] text-[#5EC6FF] font-mono text-xs uppercase tracking-[0.15em] px-6 py-3 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(94,198,255,0.3)] hover:-translate-y-0.5 group"
+          >
+            <TerminalSquare className="w-3.5 h-3.5" />
+            View Full Profile
+            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
         </div>
 
         {/* Mobile Stacked Chips */}
