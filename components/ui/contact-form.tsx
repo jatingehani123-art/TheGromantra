@@ -2,11 +2,13 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { ReCAPTCHA } from "@/components/ui/recaptcha"
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [submitError, setSubmitError] = useState("")
+  const [recaptchaToken, setRecaptchaToken] = useState("")
 
   const services = [
     "SEO",
@@ -28,6 +30,7 @@ export function ContactForm() {
       newErrors.email = "INVALID_FORMAT"
     }
     if (!formData.get("message")) newErrors.message = "REQUIRED_FIELD_MISSING"
+    if (!recaptchaToken) newErrors.recaptcha = "VERIFY_RECAPTCHA_REQUIRED"
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors)
@@ -50,6 +53,7 @@ export function ContactForm() {
           company: formData.get("company"),
           service: formData.get("service"),
           message: formData.get("message"),
+          recaptchaToken,
         }),
       })
 
@@ -162,6 +166,27 @@ export function ContactForm() {
             placeholder="Describe your growth objectives..."
           />
         </div>
+
+        {/* reCAPTCHA Security Verification */}
+        <div className="space-y-2">
+          <label className="text-[#5EC6FF] font-mono text-[10px] uppercase tracking-widest flex items-center justify-between">
+            SECURITY VERIFICATION (RECAPTCHA)
+            {errors.recaptcha && <span className="text-[#FFB020]">[{errors.recaptcha}]</span>}
+          </label>
+          <ReCAPTCHA
+            onVerify={(token) => {
+              setRecaptchaToken(token)
+              setErrors((prev) => ({ ...prev, recaptcha: "" }))
+            }}
+            onExpired={() => setRecaptchaToken("")}
+          />
+        </div>
+
+        {submitError && (
+          <div className="p-3 bg-red-950/50 border border-red-500/40 rounded text-red-300 font-mono text-xs text-center">
+            [{submitError}]
+          </div>
+        )}
 
         {/* Submit */}
         <button 

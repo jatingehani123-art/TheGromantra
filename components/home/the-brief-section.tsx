@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
+import { ReCAPTCHA } from "@/components/ui/recaptcha"
 
 /* ═══════════════════════════════════════════════
    THE BRIEF — Contact intake as a creative terminal.
@@ -19,6 +20,8 @@ export default function TheBriefSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
   const [formState, setFormState] = useState<"idle" | "sending" | "sent">("idle")
+  const [recaptchaToken, setRecaptchaToken] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -41,6 +44,13 @@ export default function TheBriefSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (formState !== "idle") return
+
+    if (!recaptchaToken) {
+      setErrorMessage("Please complete the reCAPTCHA verification below.")
+      return
+    }
+
+    setErrorMessage("")
     setFormState("sending")
 
     try {
@@ -53,16 +63,20 @@ export default function TheBriefSection() {
           company: formData.company,
           building: formData.building,
           timeline: formData.timeline,
-          // source field so we can distinguish in email
           message: `[The Brief Form]\nCompany: ${formData.company}\nBuilding: ${formData.building}\nTimeline: ${formData.timeline}`,
+          recaptchaToken,
         }),
       })
+
       if (response.ok) {
         setFormState("sent")
       } else {
+        const data = await response.json()
+        setErrorMessage(data?.error || "TRANSMISSION_FAILED")
         setFormState("idle")
       }
     } catch {
+      setErrorMessage("NETWORK_ERROR — CHECK CONNECTION")
       setFormState("idle")
     }
   }
@@ -279,6 +293,32 @@ export default function TheBriefSection() {
                 placeholder="you@company.com"
               />
             </div>
+
+            {/* 06 / SECURITY VERIFICATION */}
+            <div
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateY(0)" : "translateY(15px)",
+                transition: "all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 650ms",
+              }}
+            >
+              <label className="font-body-mono text-[10px] tracking-[0.3em] uppercase block mb-2" style={{ color: "#5ec6ff" }}>
+                06 / SECURITY VERIFICATION
+              </label>
+              <ReCAPTCHA
+                onVerify={(token) => {
+                  setRecaptchaToken(token)
+                  setErrorMessage("")
+                }}
+                onExpired={() => setRecaptchaToken("")}
+              />
+            </div>
+
+            {errorMessage && (
+              <p className="font-body-mono text-xs text-[#FFB020] text-center">
+                [{errorMessage}]
+              </p>
+            )}
 
             {/* Submit button */}
             <div

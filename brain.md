@@ -285,6 +285,8 @@ BlogBlock types: `"paragraph"` | `"heading2"` | `"heading3"` | `"list"` | `"quot
 4. **Remote images**: Only `images.unsplash.com` allowed in next.config.mjs
 5. **`"use client"` required** for: useState, useEffect, framer-motion, GSAP, event handlers
 6. **Footer font**: Plus Jakarta Sans loaded inline in motion-footer.tsx (not via next/font)
+7. **DevTools Protection**: `DisableDevTools` component in layout.tsx disables F12, right-click, inspect, Ctrl+Shift+I/J/C, and Ctrl+U. `devIndicators: false` set in `next.config.mjs`.
+8. **reCAPTCHA Security**: All intake forms (`ContactForm` & `TheBriefSection`) require Google reCAPTCHA verification via `ReCAPTCHA` component (`components/ui/recaptcha.tsx`). Supports `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` env var.
 
 ---
 

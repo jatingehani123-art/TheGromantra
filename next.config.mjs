@@ -11,11 +11,8 @@ const nextConfig = {
       },
     ],
   },
-  // <CHANGE> Force Tailwind cache bust
-  onDemandEntries: {
-    maxInactiveAge: 15 * 1000,
-    pagesBufferLength: 2,
-  },
+  devIndicators: false,
+  productionBrowserSourceMaps: false,
 }
 
 export default nextConfig

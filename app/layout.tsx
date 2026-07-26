@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Space_Grotesk, Inter, JetBrains_Mono, Press_Start_2P } from "next/font/google"
 import { ReactLenis } from "@/lib/lenis-provider"
 import { SiteLoader } from "@/components/ui/site-loader"
+import { DisableDevTools } from "@/components/ui/disable-devtools"
 import "./globals.css"
 
 const spaceGrotesk = Space_Grotesk({
@@ -87,6 +88,7 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} ${pressStart2P.variable} font-sans antialiased bg-black`}
       >
+        <DisableDevTools />
         <ReactLenis root>
           <SiteLoader>
             {/* Global grain overlay */}
