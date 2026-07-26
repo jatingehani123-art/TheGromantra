@@ -164,8 +164,8 @@ export default function SeoPageClient({ service, id }: { service: any, id: strin
 
       {/* --- HERO SECTION --- */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-32">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(94,198,255,0.15),transparent_50%)] -z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay -z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(94,198,255,0.15),transparent_50%)]" style={{ zIndex: -10, pointerEvents: 'none' }} />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay" style={{ zIndex: -10, pointerEvents: 'none' }} />
 
         <div className="max-w-7xl mx-auto px-4 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           {/* Left Text */}

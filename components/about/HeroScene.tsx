@@ -183,7 +183,7 @@ export function HeroScene() {
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20 pointer-events-none mix-blend-overlay z-1" />
 
       {/* Bottom Gradient Overlay (pointer-events-none to prevent blocking) */}
-      <div className="absolute bottom-0 w-full h-40 bg-gradient-to-t from-[#0F1115] to-transparent -z-10 pointer-events-none" />
+      <div className="absolute bottom-0 w-full h-40 bg-gradient-to-t from-[#0F1115] to-transparent" style={{ zIndex: -10, pointerEvents: 'none' }} />
     </div>
   )
 }

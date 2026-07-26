@@ -49,8 +49,8 @@ export default function SignalBoardSection() {
     <section className="py-24 bg-[#050508] relative overflow-hidden border-t border-[#343C43]">
       
       {/* Background Circuit Grid */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay -z-10 pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-[#1D4ED8] rounded-full blur-[150px] opacity-10 -z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay" style={{ zIndex: -10, pointerEvents: 'none' }} />
+      <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-[#1D4ED8] rounded-full blur-[150px] opacity-10" style={{ zIndex: -10, pointerEvents: 'none' }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
         

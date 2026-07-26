@@ -106,10 +106,10 @@ export default function BrandingPageClient({ service, id }: { service: any, id: 
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-32">
         {/* Dynamic glow background */}
         <div 
-          className="absolute inset-0 -z-10 pointer-events-none transition-all duration-500"
-          style={{ background: theme.bgGlow }}
+          className="absolute inset-0 transition-all duration-500"
+          style={{ background: theme.bgGlow, zIndex: -10, pointerEvents: 'none' }}
         />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay -z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay" style={{ zIndex: -10, pointerEvents: 'none' }} />
 
         <div className="max-w-4xl mx-auto px-4 w-full text-center relative z-10 flex flex-col items-center">
           <div 

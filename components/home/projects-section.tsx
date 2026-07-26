@@ -128,8 +128,8 @@ export default function ProjectsSection() {
 
               {/* Glow Effect on Hover */}
               <div
-                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl -z-10"
-                style={{ background: project.gradient }}
+                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"
+                style={{ background: project.gradient, zIndex: -10, pointerEvents: 'none' }}
               />
             </motion.div>
           ))}

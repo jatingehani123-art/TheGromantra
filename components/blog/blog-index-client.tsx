@@ -68,7 +68,7 @@ export default function BlogIndexClient({ posts }: { posts: Post[] }) {
                 borderWidth={3}
               />
               <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border border-[#343c43] bg-black p-6 transition-colors duration-500 group-hover:border-[#5ec6ff]/30">
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none -z-10" style={{ background: "linear-gradient(135deg, rgba(29, 78, 216, 0.05), rgba(94, 198, 255, 0.05))" }} />
+                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(135deg, rgba(29, 78, 216, 0.05), rgba(94, 198, 255, 0.05))", zIndex: -10, pointerEvents: 'none' }} />
                 
                 <div>
                   <div className="flex items-center justify-between mb-4">

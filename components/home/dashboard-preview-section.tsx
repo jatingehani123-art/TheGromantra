@@ -33,8 +33,8 @@ export default function DashboardPreviewSection() {
           className="relative mx-auto max-w-5xl"
         >
           <div
-            className="absolute inset-0 rounded-2xl blur-3xl -z-10 transition-opacity duration-1000 opacity-80"
-            style={{ background: "linear-gradient(to right, rgba(29, 78, 216, 0.25), rgba(94, 198, 255, 0.25))" }}
+            className="absolute inset-0 rounded-2xl blur-3xl transition-opacity duration-1000 opacity-80"
+            style={{ background: "linear-gradient(to right, rgba(29, 78, 216, 0.25), rgba(94, 198, 255, 0.25))", zIndex: -10, pointerEvents: 'none' }}
           />
           <div
             className="relative rounded-2xl border border-[#343c43] overflow-hidden bg-black/50 backdrop-blur-md shadow-2xl"

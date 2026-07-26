@@ -27,8 +27,8 @@ export function OperatorSection() {
     <section ref={containerRef} className="py-40 bg-[#050508] relative overflow-hidden flex flex-col items-center justify-center min-h-screen">
       
       {/* Background elements */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay -z-10 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1D4ED8] rounded-full blur-[150px] opacity-20 -z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay" style={{ zIndex: -10, pointerEvents: 'none' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1D4ED8] rounded-full blur-[150px] opacity-20" style={{ zIndex: -10, pointerEvents: 'none' }} />
 
       <div className="text-center relative z-20 max-w-3xl px-4 mb-32">
         <motion.h2 
@@ -58,7 +58,7 @@ export function OperatorSection() {
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
         >
           {/* Glowing Backlight */}
-          <div className="absolute -inset-4 bg-gradient-to-br from-[#5EC6FF] to-[#1D4ED8] opacity-30 blur-2xl animate-pulse -z-10 pointer-events-none" style={{ transform: "translateZ(-50px)" }} />
+          <div className="absolute -inset-4 bg-gradient-to-br from-[#5EC6FF] to-[#1D4ED8] opacity-30 blur-2xl animate-pulse" style={{ transform: "translateZ(-50px)", zIndex: -10, pointerEvents: 'none' }} />
 
           {/* Glass Frame */}
           <div className="absolute inset-0 bg-[#171A1F]/50 backdrop-blur-md border border-[#5EC6FF]/40 rounded-xl overflow-hidden glow-blue flex items-center justify-center">

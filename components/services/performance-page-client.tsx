@@ -30,8 +30,8 @@ export default function PerformancePageClient({ service, id }: { service: any, i
 
       {/* --- SECTION 1: HERO (SNAP) --- */}
       <section className="relative min-h-screen flex flex-col justify-center items-center snap-start">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(94,198,255,0.12),transparent_50%)] -z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay -z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(94,198,255,0.12),transparent_50%)]" style={{ zIndex: -10, pointerEvents: 'none' }} />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay" style={{ zIndex: -10, pointerEvents: 'none' }} />
 
         <div className="max-w-7xl mx-auto px-4 w-full text-center relative z-10 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono tracking-widest text-[#5EC6FF] uppercase border border-[#5EC6FF]/30 rounded-full mb-6 bg-[#0F1115]/80 backdrop-blur-md">

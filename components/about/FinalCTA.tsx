@@ -13,7 +13,7 @@ export function FinalCTA() {
              style={{ transform: "rotateX(75deg)" }}>
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-30" />
           {/* Glowing Light Trail */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-[100%] bg-gradient-to-b from-[#5EC6FF] to-transparent blur-xl glow-cyan animate-pulse -z-10 pointer-events-none opacity-40" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-[100%] bg-gradient-to-b from-[#5EC6FF] to-transparent blur-xl glow-cyan animate-pulse opacity-40" style={{ zIndex: -10, pointerEvents: 'none' }} />
         </div>
       </div>
 

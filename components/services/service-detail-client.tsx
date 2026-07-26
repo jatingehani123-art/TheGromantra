@@ -55,10 +55,10 @@ export default function ServiceDetailClient({ service, id }: { service: any, id:
       {/* SEC 1: HERO */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center">
         <div 
-          className="absolute inset-0 blur-[150px] -z-10 pointer-events-none opacity-40" 
-          style={{ background: `radial-gradient(circle at center, ${service.themeColor}, transparent 50%)` }}
+          className="absolute inset-0 blur-[150px] opacity-40" 
+          style={{ background: `radial-gradient(circle at center, ${service.themeColor}, transparent 50%)`, zIndex: -10, pointerEvents: 'none' }}
         />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay -z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay" style={{ zIndex: -10, pointerEvents: 'none' }} />
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -200,7 +200,7 @@ export default function ServiceDetailClient({ service, id }: { service: any, id:
 
       {/* SEC 4: RESULTS / PROOF VISUAL */}
       <section className="py-32 relative z-10 border-t border-[#343C43]/50 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5 mix-blend-overlay -z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5 mix-blend-overlay" style={{ zIndex: -10, pointerEvents: 'none' }} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}

@@ -64,8 +64,8 @@ export default function HowItWorksSection() {
             <div key={index} className="step opacity-0 relative">
               {index < steps.length - 1 && (
                 <div
-                  className="hidden md:block absolute top-12 left-1/2 w-full h-1 -z-10"
-                  style={{ background: "linear-gradient(to right, #1d4ed8, #5ec6ff, transparent)" }}
+                  className="hidden md:block absolute top-12 left-1/2 w-full h-1"
+                  style={{ background: "linear-gradient(to right, #1d4ed8, #5ec6ff, transparent)", zIndex: -10, pointerEvents: 'none' }}
                 />
               )}
 

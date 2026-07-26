@@ -51,8 +51,8 @@ export default function ServicesPage() {
 
       <div className="flex-1 pt-32 pb-24 relative z-10 flex flex-col items-center">
         {/* Ambient background glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#1D4ED8] rounded-full blur-[150px] opacity-15 -z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay -z-10 pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#1D4ED8] rounded-full blur-[150px] opacity-15" style={{ zIndex: -10, pointerEvents: 'none' }} />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 mix-blend-overlay" style={{ zIndex: -10, pointerEvents: 'none' }} />
 
         <div className="text-center mb-16 relative z-10 px-4">
           <p className="text-[#5EC6FF] font-mono text-sm tracking-widest mb-4 uppercase">
@@ -71,7 +71,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
             
             {/* Connecting lines for desktop (simulated network) */}
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block -z-10 opacity-30">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full hidden lg:block opacity-30" style={{ zIndex: -10, pointerEvents: 'none' }}>
               <path d="M 33 20 L 66 20 L 66 60 L 33 60 Z" fill="none" stroke="#343C43" strokeWidth="0.5" strokeDasharray="1 1" />
               <path d="M 50 40 L 50 60" fill="none" stroke="#343C43" strokeWidth="0.5" strokeDasharray="1 1" />
             </svg>
