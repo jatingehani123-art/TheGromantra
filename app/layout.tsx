@@ -95,7 +95,7 @@ export default function RootLayout({
             <div className="grain-overlay" aria-hidden="true" />
             {/* Google Analytics (gtag.js) */}
             <Script
-              src="https://www.googletagmanager.com/gtag/js?id=G-6PHGBC72KC"
+              src="https://www.googletagmanager.com/gtag/js?id=G-VM7YM3MHYY"
               strategy="afterInteractive"
             />
             <Script
@@ -106,7 +106,7 @@ export default function RootLayout({
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', 'G-6PHGBC72KC');
+                  gtag('config', 'G-VM7YM3MHYY');
                 `,
               }}
             />
