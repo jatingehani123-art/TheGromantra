@@ -5,9 +5,9 @@ import Footer from "@/components/footer"
 import { Target, Megaphone, Monitor, BarChart3, Palette, TerminalSquare } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "GROMANTRA Systems & Services | Digital Growth Engine",
-  description: "Explore our growth protocols: automated technical SEO, high-conversion performance marketing, custom web engineering, community social media, and kinetic brand identity.",
-  keywords: ["technical SEO services", "performance marketing services", "conversion web development", "brand identity design", "social media strategy"],
+  title: "Digital Marketing Services | SEO, PPC, Web Development, Branding — GROMANTRA",
+  description: "Explore GROMANTRA's full-service digital marketing solutions: technical SEO, social media management, custom web development, performance marketing (Google Ads & Meta Ads), and brand identity design. Growth systems that scale.",
+  keywords: ["SEO services", "social media marketing agency", "custom web development", "performance marketing services", "Google Ads management", "PPC campaign management", "brand identity design", "digital marketing agency India", "conversion rate optimization", "organic traffic growth"],
   alternates: { canonical: "https://thegromantra.com/services" },
 }
 
@@ -16,31 +16,31 @@ const SERVICES = [
     id: "seo",
     name: "SEO",
     icon: Target,
-    desc: "High-intent search architectures that capture demand and compound organically."
+    desc: "Dominate search results with technical SEO audits, keyword strategy, on-page optimization, and authority-building content that compounds organic traffic and drives qualified leads month over month."
   },
   {
     id: "social-media",
     name: "Social Media & Content",
     icon: Megaphone,
-    desc: "Community-driven content and social frameworks that engage and convert."
+    desc: "Strategic social media marketing and content creation across Instagram, LinkedIn, Facebook, and X — community management, influencer campaigns, and content calendars engineered for engagement and conversions."
   },
   {
     id: "web-development",
     name: "Web Development",
     icon: Monitor,
-    desc: "Lightning-fast, conversion-optimized digital experiences and platforms."
+    desc: "Custom website development, responsive design, and high-performance web applications — from landing pages to full-stack platforms built for Core Web Vitals, speed, and conversion rate optimization."
   },
   {
     id: "performance-marketing",
     name: "Performance Marketing",
     icon: BarChart3,
-    desc: "Data-driven ad campaigns designed for immediate ROI and aggressive scaling."
+    desc: "ROI-driven Google Ads, Meta Ads, and PPC campaign management — precision audience targeting, A/B creative testing, and real-time bid optimization to maximize lead generation and minimize cost per acquisition."
   },
   {
     id: "branding",
-    name: "Branding (Design/Video)",
+    name: "Branding & Creative",
     icon: Palette,
-    desc: "Kinetic brand identities, video editing, and creatives built for digital ecosystems."
+    desc: "Complete brand identity design — logo systems, visual guidelines, video production, and motion graphics that build recognition, trust, and a cohesive presence across every digital and print touchpoint."
   }
 ]
 

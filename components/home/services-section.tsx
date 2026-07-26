@@ -14,31 +14,31 @@ const SERVICES = [
     num: "01",
     name: "SEO",
     slug: "seo",
-    description: "High-intent search architectures that capture demand.",
+    description: "Technical SEO audits, on-page optimization, and organic traffic growth strategies that turn search engines into your highest-converting revenue channel.",
   },
   {
     num: "02",
     name: "Social Media & Content",
     slug: "social-media",
-    description: "Community-driven content frameworks that convert.",
+    description: "Full-service social media management and content marketing across Instagram, LinkedIn, and Meta — built to grow engaged audiences and drive measurable conversions.",
   },
   {
     num: "03",
     name: "Web Development",
     slug: "web-development",
-    description: "Lightning-fast, conversion-optimized platforms.",
+    description: "Custom web development and responsive design — high-performance websites, landing pages, and web apps engineered for speed, SEO, and conversion rate optimization.",
   },
   {
     num: "04",
     name: "Performance Marketing",
     slug: "performance-marketing",
-    description: "Data-driven campaigns designed for immediate ROI.",
+    description: "ROI-focused Google Ads, Meta Ads, and PPC management services — data-driven paid media campaigns built for lead generation and aggressive revenue scaling.",
   },
   {
     num: "05",
     name: "Branding",
     slug: "branding",
-    description: "Kinetic brand identities built for digital ecosystems.",
+    description: "Strategic brand identity design, logo systems, video editing, and creative production — cohesive visual identities that position brands for digital-first markets.",
   },
 ]
 
