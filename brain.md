@@ -30,7 +30,7 @@
 | Animation | Framer Motion | ^12.38.0 |
 | Animation | GSAP + ScrollTrigger | ^3.15.0 |
 | Smooth Scroll | Lenis | ^1.3.25 |
-| 3D | React Three Fiber + Drei | ^9.6.1 / ^10.7.7 |
+| 3D | React Three Fiber + Drei + Postprocessing | ^9.6.1 / ^10.7.7 / ^6.39.3 |
 | Icons | Lucide React | ^0.454.0 |
 | Analytics | Vercel Analytics | latest |
 | CSS Merge | tailwind-merge + clsx | ^2.5.5 / ^2.1.1 |
