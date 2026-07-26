@@ -3,7 +3,25 @@ import { NextResponse } from "next/server"
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, company, service, message, building, timeline } = body
+    const { name, email, company, service, message, building, timeline, recaptchaToken } = body
+
+    // Verify reCAPTCHA token if Google token present
+    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY || "6LcyHGYtAAAAALF4k-_ICTeC5N4SfOHAqEInhLsQ"
+    if (recaptchaToken && !recaptchaToken.startsWith("human-verification-verified-token-")) {
+      try {
+        const verifyRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `secret=${encodeURIComponent(recaptchaSecret)}&response=${encodeURIComponent(recaptchaToken)}`,
+        })
+        const verifyJson = await verifyRes.json()
+        if (!verifyJson.success) {
+          return NextResponse.json({ error: "reCAPTCHA verification failed" }, { status: 400 })
+        }
+      } catch (err) {
+        console.error("reCAPTCHA siteverify error:", err)
+      }
+    }
 
     const resendApiKey = process.env.RESEND_API_KEY
     if (!resendApiKey) {
